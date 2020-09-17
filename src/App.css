@@ -24,6 +24,21 @@
   color: white;
 }
 
+.App-Admin-Join {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+}
+
+.App-Admin-Join>div>input {
+  float: right;
+}
+
+.App-Admin-Join>div>label {
+  float: left;
+}
+
 .App-link {
   color: #61dafb;
 }
