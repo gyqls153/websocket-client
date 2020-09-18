@@ -5,14 +5,17 @@ import ws from './WebSocket';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
-axios.default.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:3000';
 
-function test()
+// 시리얼 생성
+function createSerial()
 {
-  //ws.send(JSON.stringify(data));
-  
-  axios.post('/admin_join')
-  .then(function (response) { console.log(response); })
+  axios.get('/createSerial')
+  .then(function (response) { 
+    console.log(response); 
+    const textBox = document.getElementById("serialTextBox");
+    textBox.value = response.data.value;
+  })
   .catch(function (error) { });
 }
 
@@ -60,8 +63,9 @@ function App() {
             <label>PASSWORD_VERIFY</label>
             <input type="password" id="password_verify" />
           </div>
-          <button onClick= {test}>Click me</button>
           <button onClick= {test2}>Click me</button>
+          <input type='text' required = {true} readOnly = {true} value="" id="serialTextBox"></input>
+          <button onClick= {createSerial}>시리얼 생성</button>
         </div>
       </header>
     </div>
