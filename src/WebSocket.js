@@ -17,13 +17,4 @@ ws.onerror = function(event) {
   console.log("Server error message: ", event.data);
 }
 
-ws.sendToUnity = function(data) {
-
-}
-
-ws.sendToWebClient = function(data) 
-{
-    ws.send("ssss");
-}
-
 export default ws;
