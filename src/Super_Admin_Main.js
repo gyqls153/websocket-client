@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ws from './WebSocket';
 import axios from 'axios';
+import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo } from './AppContextProvider';
 
 function joinAdminUser()
 {
@@ -44,7 +45,32 @@ function createSerial()
   .catch(function (error) { });
 }
 
-function Admin_Main() {
+function Super_Admin_Main() {
+    const name = useName();
+    
+    const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
+    const [adminInfoList, setAdminInfoList] = useState([]);
+
+    useEffect(() => {
+        async function func(){
+        await axios.post('/adminInfo_list', {
+        })
+        .then(function (response) { 
+
+          let temp_adminInfoList = adminInfoList;
+          temp_adminInfoList = temp_adminInfoList.concat(response.data);
+
+           if (!adminInfoList_recv)
+             setAdminInfoList(temp_adminInfoList);
+             setAdminInfoList_recv(true);             
+        })
+        .catch(function (error) { console.log(error); });
+
+      }
+
+      func();
+
+    }, [adminInfoList, adminInfoList_recv]);
     return (
         <div className="App-Admin-Join">
           <div>
@@ -62,8 +88,21 @@ function Admin_Main() {
           <button onClick= {joinAdminUser}>관리자 등록</button>
           <input type='text' required = {true} readOnly = {true} value="" id="serialTextBox"></input>
           <button onClick= {createSerial}>시리얼 생성</button>
+          <table>
+            <tbody>
+            {
+                adminInfoList.length > 0 && adminInfoList.map((data, i)=> {
+                  console.log(data);
+                  return (<tr key={i}>
+                    <td>{data.loginId}</td>
+                    <td><button>수정</button></td>
+                  </tr>)
+                })
+            }
+          </tbody>
+          </table>
         </div>
     );
 };
 
-export default Admin_Main;
+export default Super_Admin_Main;
