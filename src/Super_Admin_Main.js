@@ -23,6 +23,7 @@ function joinAdminUser()
     if (response.data.isSuccess)
     {
       alert("등록 성공") 
+      axios.post('/')
     }
     else
     {
@@ -57,12 +58,9 @@ function Super_Admin_Main() {
         })
         .then(function (response) { 
 
-          let temp_adminInfoList = adminInfoList;
-          temp_adminInfoList = temp_adminInfoList.concat(response.data);
-
            if (!adminInfoList_recv)
-             setAdminInfoList(temp_adminInfoList);
-             setAdminInfoList_recv(true);             
+             setAdminInfoList(response.data);
+             setAdminInfoList_recv(true);
         })
         .catch(function (error) { console.log(error); });
 
@@ -71,6 +69,11 @@ function Super_Admin_Main() {
       func();
 
     }, [adminInfoList, adminInfoList_recv]);
+
+    const onClickButton = (idx) => {
+
+    }
+
     return (
         <div className="App-Admin-Join">
           <div>
@@ -93,9 +96,9 @@ function Super_Admin_Main() {
             {
                 adminInfoList.length > 0 && adminInfoList.map((data, i)=> {
                   console.log(data);
-                  return (<tr key={i}>
+                  return (<tr>
                     <td>{data.loginId}</td>
-                    <td><button>수정</button></td>
+                    <td><button key={i} onClick={() => {console.log(i)}} >수정</button></td>
                   </tr>)
                 })
             }
