@@ -2,11 +2,12 @@ import React from 'react';
 import ws from './WebSocket';
 import axios from 'axios';
 
-function Home(props)
+function Home({ history })
 {
-    console.log(props);
+    console.log(history);
 
     const login = () => {
+
     const id = document.getElementById("id").value;
     const password = document.getElementById("password").value;
 
@@ -15,10 +16,11 @@ function Home(props)
       password : password
     })
     .then(function (response) { 
+      console.log("login");
       if (response.data.isSuccess)
       {
         alert("로그인 성공");
-        props.history.push("/admin_main");
+        //props.history.push("/admin_main");
       }
       else
       {

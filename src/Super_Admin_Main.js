@@ -1,77 +1,77 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ws from './WebSocket';
 import axios from 'axios';
-import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo } from './AppContextProvider';
+import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo, useSetSelectedLoginId } from './AppContextProvider';
 
-function joinAdminUser()
-{
-  const id = document.getElementById("id").value;
-  const password = document.getElementById("password").value;
-  const password_verify = document.getElementById("password_verify").value;
+function Super_Admin_Main(props) {
+  const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
+  const [adminInfoList, setAdminInfoList] = useState([]);
 
-  if (password !== password_verify)
+  useEffect(() => {
+      async function func(){
+      await axios.post('/adminInfo_list', {
+      })
+      .then(function (response) { 
+
+         if (!adminInfoList_recv)
+           setAdminInfoList(response.data);
+           setAdminInfoList_recv(true);
+      })
+      .catch(function (error) { console.log(error); });
+
+    }
+
+    func();
+
+  }, [adminInfoList, adminInfoList_recv]);
+
+  function joinAdminUser()
   {
-    alert("비밀번호가 일치하지 않습니다.");
-    return;
-  }
-
-  axios.post('/admin_join', {
-    id : id,
-    password : password
-  })
-  .then(function (response) { 
-    if (response.data.isSuccess)
+    const id = document.getElementById("id").value;
+    const password = document.getElementById("password").value;
+    const password_verify = document.getElementById("password_verify").value;
+  
+    if (password !== password_verify)
     {
-      alert("등록 성공") 
-      axios.post('/')
+      alert("비밀번호가 일치하지 않습니다.");
+      return;
     }
-    else
-    {
-      alert(response.data.errorMsg);
-    }
-    console.log(response);
-  })
-  .catch(function (error) { });
-}
-
-// 시리얼 생성
-function createSerial()
-{
-  axios.get('/createSerial')
-  .then(function (response) { 
-    console.log(response); 
-    const textBox = document.getElementById("serialTextBox");
-    textBox.value = response.data.value;
-  })
-  .catch(function (error) { });
-}
-
-function Super_Admin_Main() {
-    const name = useName();
-    
-    const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
-    const [adminInfoList, setAdminInfoList] = useState([]);
-
-    useEffect(() => {
-        async function func(){
-        await axios.post('/adminInfo_list', {
-        })
-        .then(function (response) { 
-
-           if (!adminInfoList_recv)
-             setAdminInfoList(response.data);
-             setAdminInfoList_recv(true);
-        })
-        .catch(function (error) { console.log(error); });
-
+  
+    axios.post('/admin_join', {
+      id : id,
+      password : password
+    })
+    .then(function (response) { 
+      if (response.data.isSuccess)
+      {
+        alert("등록 성공") 
+        setAdminInfoList_recv(false);
       }
-
-      func();
-
-    }, [adminInfoList, adminInfoList_recv]);
-
+      else
+      {
+        alert(response.data.errorMsg);
+      }
+      console.log(response);
+    })
+    .catch(function (error) { });
+  }
+  
+  // 시리얼 생성
+  function createSerial()
+  {
+    axios.get('/createSerial')
+    .then(function (response) { 
+      console.log(response); 
+      const textBox = document.getElementById("serialTextBox");
+      textBox.value = response.data.value;
+    })
+    .catch(function (error) { });
+  }
+    let setSelectedLoginId = useSetSelectedLoginId();
     const onClickButton = (idx) => {
-
+      console.log(adminInfoList[idx]);
+      setSelectedLoginId(adminInfoList[idx].loginId);
+      props.history.push("/admin_userSetting");
     }
 
     return (
@@ -95,10 +95,9 @@ function Super_Admin_Main() {
             <tbody>
             {
                 adminInfoList.length > 0 && adminInfoList.map((data, i)=> {
-                  console.log(data);
-                  return (<tr>
+                  return (<tr key={i}>
                     <td>{data.loginId}</td>
-                    <td><button key={i} onClick={() => {console.log(i)}} >수정</button></td>
+                    <td><button onClick={() => {onClickButton(i)}} >수정</button></td>
                   </tr>)
                 })
             }
