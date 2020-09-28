@@ -56,20 +56,8 @@ function Super_Admin_Main(props) {
     .catch(function (error) { });
   }
   
-  // 시리얼 생성
-  function createSerial()
-  {
-    axios.get('/createSerial')
-    .then(function (response) { 
-      console.log(response); 
-      const textBox = document.getElementById("serialTextBox");
-      textBox.value = response.data.value;
-    })
-    .catch(function (error) { });
-  }
     let setSelectedLoginId = useSetSelectedLoginId();
     const onClickButton = (idx) => {
-      console.log(adminInfoList[idx]);
       setSelectedLoginId(adminInfoList[idx].loginId);
       props.history.push("/admin_userSetting");
     }
@@ -89,8 +77,6 @@ function Super_Admin_Main(props) {
             <input type="password" id="password_verify" />
           </div>
           <button onClick= {joinAdminUser}>관리자 등록</button>
-          <input type='text' required = {true} readOnly = {true} value="" id="serialTextBox"></input>
-          <button onClick= {createSerial}>시리얼 생성</button>
           <table>
             <tbody>
             {

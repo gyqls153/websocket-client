@@ -3,12 +3,15 @@ import React, { createContext, useContext, useState } from 'react'
 export const AppContext = createContext();
 
 const AppContextProvider = ({children}) => {
-    let selectedLoginId = "";
+    const [value, setValue] = useState( {
+        loginId: ""
+    })
+
     const set_selectedLoginId = (param) => {
-        selectedLoginId = param;
+        setValue(param);
     }
 
-    return <AppContext.Provider value={{name: "Jungmo", selectedLoginId, set_selectedLoginId}}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{name: "Jungmo", value, set_selectedLoginId}}>{children}</AppContext.Provider>
 };
 
 export default AppContextProvider;
@@ -24,6 +27,6 @@ export const useSetSelectedLoginId = () => {
 }
 
 export const useSelectedLoginId = () => {
-    const {selectedLoginId} = useContext(AppContext);
-    return selectedLoginId;
+    const {value} = useContext(AppContext);
+    return value;
 }
