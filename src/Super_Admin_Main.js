@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ws from './WebSocket';
 import axios from 'axios';
-import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo, useSetSelectedLoginId } from './AppContextProvider';
+import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo, useSetSelectedLoginId, useSetSerialInfoList } from './AppContextProvider';
 
 function Super_Admin_Main(props) {
   const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
@@ -57,9 +57,18 @@ function Super_Admin_Main(props) {
   }
   
     let setSelectedLoginId = useSetSelectedLoginId();
+    const setSerialInfoList = useSetSerialInfoList();
+
     const onClickButton = (idx) => {
-      setSelectedLoginId(adminInfoList[idx].loginId);
-      props.history.push("/admin_userSetting");
+    axios.post('/serial_list', {
+        loginId: adminInfoList[idx].loginId
+      })
+      .then(function (response) { 
+        setSelectedLoginId(adminInfoList[idx].loginId);
+        setSerialInfoList(response.data);
+        //props.history.push("/admin_userSetting");
+      })
+      .catch(function (error) { console.log(error); });
     }
 
     return (

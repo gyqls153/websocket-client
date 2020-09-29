@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { useSelectedLoginId } from './AppContextProvider';
+import { useEnableGameDic, useSelectedLoginId } from './AppContextProvider';
 
 function Super_Admin_UserSetting_2(props)
 {
@@ -24,6 +24,15 @@ function Super_Admin_UserSetting_2(props)
 
         func();
     },[packet_recv, gameList]);
+    
+    const enableGameDic = useEnableGameDic();
+
+    const changeGameCheckValue = (e, data) => {
+        console.log(data.id);
+        enableGameDic[data.id] = e.target.checked;
+
+        console.log(enableGameDic);
+    }
 
     return (
         <>
@@ -34,7 +43,7 @@ function Super_Admin_UserSetting_2(props)
                         return (
                             <div key={i}>
                                 <label htmlFor={"game_" + i}>{data.Title}</label> 
-                                <input name={"game_" + i} type="checkbox"/>
+                                 <input name={"game_" + i} onChange={(e) => changeGameCheckValue(e, data)} type="checkbox"/>
                             </div>
                         )
                     })

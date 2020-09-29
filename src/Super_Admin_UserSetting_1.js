@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { useSelectedLoginId } from './AppContextProvider';
+import { useEnableGameDic, useSelectedLoginId, useSerialInfoList, useSetSerialInfoList } from './AppContextProvider';
 
 function Super_Admin_UserSetting_1(props)
 {
@@ -17,26 +17,9 @@ function Super_Admin_UserSetting_1(props)
   }
 
   const [serialList_recv, setSerialList_recv] = useState(false);
-  const [serialInfoList, setSerialInfoList] = useState([]);
+  const serialInfoList = useSerialInfoList();
+  const setSerialInfoList = useSetSerialInfoList();
   const loginId = useSelectedLoginId();
-
-  useEffect(() => {
-      async function func(){
-      await axios.post('/serial_list', {
-          loginId: loginId
-      })
-      .then(function (response) { 
-         if (!serialList_recv)
-            setSerialInfoList(response.data);
-           setSerialList_recv(true);
-      })
-      .catch(function (error) { console.log(error); });
-
-    }
-
-    func();
-
-  }, [serialInfoList, serialList_recv]);
 
   const onClickAddButton = (serial) => {
     axios.post('/add_Serial', {
@@ -58,39 +41,42 @@ function Super_Admin_UserSetting_1(props)
       .catch(function (error) { });
   }
 
+  const enableGameDic = useEnableGameDic();
+
+  const onClick_UpdateSerialSlot = () => {
+      axios.post('/update_gameInfo', {
+         loginId: loginId,
+         serials: JSON.stringify(serialInfoList),
+         enableGameDic: JSON.stringify(enableGameDic)
+      })
+      .then(function (response) { 
+      })
+      .catch(function (error) { console.log(error); });
+  }
+
+  
   const onClick_AddSerialSlot = () => {
-      console.log(serialInfoList);
-      setSerialInfoList([...serialInfoList,""]);
+    console.log(serialInfoList);
+    setSerialInfoList([...serialInfoList,""]);
   }
 
   const onChange_SerialValue= (idx, value) => {
-    serialInfoList[idx] = value.target.value;
-  }
-
-  const onClick_UpdateSerialSlot = () => {
-
-        console.log(serialInfoList);
-
-      axios.post('/update_serial_list', {
-         loginId: loginId,
-         serials: JSON.stringify(serialInfoList)
-      })
-      .then(function (response) { 
-        console.log(response.data); 
-
-         if (!serialList_recv)
-            setSerialInfoList(response.data.serials);
-           setSerialList_recv(true);
-      })
-      .catch(function (error) { console.log(error); });
-
+    serialInfoList[idx] = value;
   }
 
 
   const onClick_RemoveSerialSlot = (i) => {
+        console.log(i);
         serialInfoList.splice(i, 1);
         setSerialInfoList([...serialInfoList]);
     }
+
+    console.log(serialInfoList);
+
+    const menuList = serialInfoList.map((menu, index) => (<div key={index}>
+        <div>{menu}</div>
+    <button onClick={e => onClick_RemoveSerialSlot(index)}>{"test"+`${index}`}</button>
+      </div>));
 
     return (
         <>
@@ -102,20 +88,7 @@ function Super_Admin_UserSetting_1(props)
                 <button onClick={() => {onClick_AddSerialSlot()}}>+</button>
                 <button onClick={() => {onClick_UpdateSerialSlot()}}>등록완료</button>
             </div>
-            <div>
-                <table>
-                    <tbody>
-                    {
-                        serialInfoList != null && serialInfoList.length > 0 && serialInfoList.map((data, i)=> {
-                        return (<tr key={i}>
-                            <td><input onChange={(value) => {onChange_SerialValue(i, value);  console.log(data);} } type='text' required = {true} defaultValue = {data} id={`"serialTextBox_${i}"`}></input></td>
-                            <td><button onClick={() => onClick_RemoveSerialSlot(i)}>삭제</button></td>
-                        </tr>)
-                        })
-                    }
-                    </tbody>
-                </table>
-            </div>
+            {menuList}
         </>
     )
 }
