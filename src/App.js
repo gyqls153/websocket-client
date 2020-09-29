@@ -6,7 +6,7 @@ import Super_Admin_Main from './Super_Admin_Main'
 import Home from './Home'
 import axios from 'axios';
 import AppContextProvider from './AppContextProvider';
-import Super_Admin_UserSetting from './Super_Admin_UserSetting';
+import Super_Admin_UserSetting_Main from './Super_Admin_UserSetting_Main';
 
 axios.defaults.baseURL = 'http://localhost:3000';
 
@@ -16,7 +16,7 @@ function App() {
       <Router>
           <Switch>
               <Route path ='/admin_main' component={Super_Admin_Main}></Route>
-              <Route path ='/admin_userSetting' component={Super_Admin_UserSetting}></Route>
+              <Route path ='/admin_userSetting' component={Super_Admin_UserSetting_Main}></Route>
           </Switch>
       </Router>
     </AppContextProvider>

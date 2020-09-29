@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelectedLoginId } from './AppContextProvider';
 
-function Super_Admin_UserSetting(props)
+function Super_Admin_UserSetting_1(props)
 {
     // 시리얼 생성
   function createSerial()
   {
-    axios.get('/createSerial')
+    axios.post('/createSerial')
     .then(function (response) { 
       console.log(response); 
       const textBox = document.getElementById("serialTextBox");
@@ -26,9 +26,6 @@ function Super_Admin_UserSetting(props)
           loginId: loginId
       })
       .then(function (response) { 
-
-        console.log(response.data);
-
          if (!serialList_recv)
             setSerialInfoList(response.data);
            setSerialList_recv(true);
@@ -124,4 +121,4 @@ function Super_Admin_UserSetting(props)
 }
 
 
-export default Super_Admin_UserSetting;
+export default Super_Admin_UserSetting_1;
