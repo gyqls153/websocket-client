@@ -4,41 +4,19 @@ import { useEnableGameDic, useSelectedLoginId, useSerialInfoList, useSetSerialIn
 
 function Super_Admin_UserSetting_1(props)
 {
-    // 시리얼 생성
-  function createSerial()
-  {
-    axios.post('/createSerial')
-    .then(function (response) { 
-      console.log(response); 
-      const textBox = document.getElementById("serialTextBox");
-      textBox.value = response.data.value;
-    })
-    .catch(function (error) { });
-  }
-
   const [serialList_recv, setSerialList_recv] = useState(false);
   const serialInfoList = useSerialInfoList();
   const setSerialInfoList = useSetSerialInfoList();
   const loginId = useSelectedLoginId();
 
-  const onClickAddButton = (serial) => {
-    axios.post('/add_Serial', {
-        loginId : loginId,
-        serial : serial
-      })
-      .then(function (response) { 
-        if (response.data.isSuccess)
-        {
-          alert("등록 성공") 
-          setSerialList_recv(false);
-        }
-        else
-        {
-          alert(response.data.errorMsg);
-        }
-        console.log(response);
-      })
-      .catch(function (error) { });
+    // 시리얼 생성
+  function createSerial()
+  {
+    axios.post('/createSerial')
+    .then(function (response) { 
+      setSerialInfoList([...serialInfoList, response.data.value]);
+    })
+    .catch(function (error) { });
   }
 
   const enableGameDic = useEnableGameDic();
@@ -53,17 +31,11 @@ function Super_Admin_UserSetting_1(props)
       })
       .catch(function (error) { console.log(error); });
   }
-
   
   const onClick_AddSerialSlot = () => {
     console.log(serialInfoList);
     setSerialInfoList([...serialInfoList,""]);
   }
-
-  const onChange_SerialValue= (idx, value) => {
-    serialInfoList[idx] = value;
-  }
-
 
   const onClick_RemoveSerialSlot = (i) => {
         console.log(i);
@@ -73,19 +45,15 @@ function Super_Admin_UserSetting_1(props)
 
     console.log(serialInfoList);
 
-    const menuList = serialInfoList.map((menu, index) => (<div key={index}>
-        <div>{menu}</div>
-    <button onClick={e => onClick_RemoveSerialSlot(index)}>{"test"+`${index}`}</button>
-      </div>));
+    const menuList = serialInfoList.map((menu, index, array) => (<div key={index}>
+      <span>{menu}</span>
+      <button onClick={e => onClick_RemoveSerialSlot(index)}>삭제</button>
+    </div>));
 
     return (
         <>
             <div>
-                <input type='text' required = {true} readOnly = {true} value="" name="serialTextBox_Group" id="serialTextBox"></input>
                 <button onClick= {createSerial}>시리얼 생성</button>
-            </div>
-            <div>
-                <button onClick={() => {onClick_AddSerialSlot()}}>+</button>
                 <button onClick={() => {onClick_UpdateSerialSlot()}}>등록완료</button>
             </div>
             {menuList}

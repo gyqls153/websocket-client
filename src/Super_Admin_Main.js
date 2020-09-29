@@ -66,7 +66,7 @@ function Super_Admin_Main(props) {
       .then(function (response) { 
         setSelectedLoginId(adminInfoList[idx].loginId);
         setSerialInfoList(response.data);
-        //props.history.push("/admin_userSetting");
+        props.history.push("/admin_userSetting");
       })
       .catch(function (error) { console.log(error); });
     }
