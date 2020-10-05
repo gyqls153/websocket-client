@@ -6,6 +6,7 @@ function Super_Admin_UserSetting_2(props)
 {
     const [packet_recv, set_packet_recv] = useState(false);
     const [gameList, setGameList] = useState([]);
+    const enableGameDic = useEnableGameDic();
 
     useEffect(() => {
         async function func(){
@@ -17,7 +18,7 @@ function Super_Admin_UserSetting_2(props)
                     set_packet_recv(true);
                 }
             })
-            .catch((e) => {
+            .catch((e) => { 
                 
             })
         }
@@ -25,13 +26,8 @@ function Super_Admin_UserSetting_2(props)
         func();
     },[packet_recv, gameList]);
     
-    const enableGameDic = useEnableGameDic();
-
     const changeGameCheckValue = (e, data) => {
-        console.log(data.id);
         enableGameDic[data.id] = e.target.checked;
-
-        console.log(enableGameDic);
     }
 
     return (
@@ -43,7 +39,7 @@ function Super_Admin_UserSetting_2(props)
                         return (
                             <div key={i}>
                                 <label htmlFor={"game_" + i}>{data.Title}</label> 
-                                 <input name={"game_" + i} onChange={(e) => changeGameCheckValue(e, data)} type="checkbox"/>
+                                 <input name={"game_" + i}  onChange={(e) => changeGameCheckValue(e, data)} type="checkbox" defaultChecked={enableGameDic[gameList[i].id]? "chekced" : ""}/>
                             </div>
                         )
                     })

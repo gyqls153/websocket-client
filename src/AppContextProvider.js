@@ -11,7 +11,7 @@ const AppContextProvider = ({children}) => {
         setValue(param);
     }
 
-    const enableGameDic = {};
+    const [enableGameDic, set_enableGameDic] = useState({});
     const [serialInfoList, setSerialInfoList] = useState([]);
 
     return <AppContext.Provider value={
@@ -21,6 +21,7 @@ const AppContextProvider = ({children}) => {
             set_selectedLoginId, 
             
             enableGameDic,
+            set_enableGameDic,
             
             serialInfoList,
             setSerialInfoList
@@ -48,6 +49,11 @@ export const useSelectedLoginId = () => {
 export const useEnableGameDic = () => {
     const {enableGameDic} = useContext(AppContext);
     return enableGameDic;
+}
+
+export const useSetEnableGameDic = () => {
+    const {set_enableGameDic} = useContext(AppContext);
+    return set_enableGameDic;
 }
 
 export const useSerialInfoList = () => {
