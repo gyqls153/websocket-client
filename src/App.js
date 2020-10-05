@@ -18,7 +18,7 @@ function App() {
       <Router>
           <Switch>
               <Route path ='/' exact component={Admin_Main}></Route>
-              <Route path ='/admin_setting' exact component={Admin_Setting}></Route>
+              <Route path ='/admin_setting' component={Admin_Setting}></Route>
               <Route path ='/super_admin_main' component={Super_Admin_Main}></Route>
               <Route path ='/super_admin_userSetting' component={Super_Admin_UserSetting_Main}></Route>
           </Switch>

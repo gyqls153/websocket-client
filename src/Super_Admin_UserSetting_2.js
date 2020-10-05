@@ -10,7 +10,7 @@ function Super_Admin_UserSetting_2(props)
 
     useEffect(() => {
         async function func(){
-            await axios.post('/gameList', {})
+            await axios.post('/gameList_all', {})
             .then((response) => {
                 if (!packet_recv)
                 {
