@@ -1,34 +1,50 @@
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
-import { useEnableGameDic, useSelectedLoginId } from './AppContextProvider';
+import Axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useAdminLoginId, useEnableGameDic } from './AppContextProvider';
 
-function Super_Admin_UserSetting_2(props)
-{
-    const [packet_recv, set_packet_recv] = useState(false);
-    const [gameList, setGameList] = useState([]);
+function Admin_Setting() {
+    const loginId = useAdminLoginId();
     const enableGameDic = useEnableGameDic();
 
+    const [packet_recv, set_packet_recv] = useState(false);
+    const [gameList, setGameList] = useState([]);
+    
     useEffect(() => {
         async function func(){
-            await axios.post('/gameList_all', {})
+            await Axios.post('/gameList_current_admin', {
+                loginId: loginId
+            })
             .then((response) => {
                 if (!packet_recv)
                 {
+                    console.log(response.data);
                     setGameList(response.data);
                     set_packet_recv(true);
                 }
             })
             .catch((e) => { 
-                
+                console.log(e);
             })
         }
 
+
         func();
-    },[packet_recv, gameList]);
-    
+    },[packet_recv, gameList, loginId]);
+
     const changeGameCheckValue = (e, data) => {
         enableGameDic[data.id] = e.target.checked;
     }
+
+    // const onClick_UpdateSerialSlot = () => {
+    //     Axios.post('/update_gameInfo', {
+    //        loginId: loginId,
+    //        serials: JSON.stringify(serialInfoList),
+    //        enableGameDic: JSON.stringify(enableGameDic)
+    //     })
+    //     .then(function (response) { 
+    //     })
+    //     .catch(function (error) { console.log(error); });
+    // }
 
     return (
         <>
@@ -49,4 +65,4 @@ function Super_Admin_UserSetting_2(props)
     )
 }
 
-export default Super_Admin_UserSetting_2;
+export default Admin_Setting

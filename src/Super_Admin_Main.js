@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ws from './WebSocket';
 import axios from 'axios';
-import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo, useSetSelectedLoginId, useSetSerialInfoList } from './AppContextProvider';
+import AppContextProvider, { useAdminInfo_List, useName, useAddAdminInfo, useSetSelectedLoginId, useSetSerialInfoList, useSetEnableGameDic } from './AppContextProvider';
 
 function Super_Admin_Main(props) {
   const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
@@ -58,6 +58,7 @@ function Super_Admin_Main(props) {
   
     let setSelectedLoginId = useSetSelectedLoginId();
     const setSerialInfoList = useSetSerialInfoList();
+    const setEnableGameDic = useSetEnableGameDic();
 
     const onClickButton = (idx) => {
     axios.post('/serial_list', {
@@ -66,8 +67,16 @@ function Super_Admin_Main(props) {
       .then(function (response) { 
         setSelectedLoginId(adminInfoList[idx].loginId);
         setSerialInfoList(response.data);
-        props.history.push("/admin_userSetting");
-      })
+        axios.post('/get_enable_game_list', {
+          loginId : adminInfoList[idx].loginId
+        })
+        .then(function (response) {
+          setEnableGameDic(response.data);
+          props.history.push("/admin_userSetting");
+        })
+        .catch(function(error) {console.log(error)})
+
+       })
       .catch(function (error) { console.log(error); });
     }
 

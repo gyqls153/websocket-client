@@ -45,7 +45,7 @@ function Super_Admin_UserSetting_1(props)
 
     console.log(serialInfoList);
 
-    const menuList = serialInfoList.map((menu, index, array) => (<div key={index}>
+    const menuList = serialInfoList && serialInfoList.map((menu, index, array) => (<div key={index}>
       <span>{menu}</span>
       <button onClick={e => onClick_RemoveSerialSlot(index)}>삭제</button>
     </div>));
