@@ -1,6 +1,8 @@
+import config from './config.json'
+
 console.log("WebSocket");
 
-const ws = new WebSocket("ws://18.189.126.54:4000");
+const ws = new WebSocket(`ws://${config[config.ENV].addressIp}`);
 
 ws.onopen = function(event) {
   //ws.send("Client message: Hi!");

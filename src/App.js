@@ -9,8 +9,9 @@ import AppContextProvider from './AppContextProvider';
 import Super_Admin_UserSetting_Main from './Super_Admin_UserSetting_Main';
 import Admin_Main from './Admin_Main';
 import Admin_Setting from './Admin_Setting'
+import config from './config.json'
 
-axios.defaults.baseURL = 'http://18.189.126.54:4000';
+axios.defaults.baseURL = `http://${config[config.ENV].addressIp}`;
 
 function App() {
   return (
