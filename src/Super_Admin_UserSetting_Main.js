@@ -5,7 +5,6 @@ import Super_Admin_UserSetting_2 from './Super_Admin_UserSetting_2';
 function Super_Admin_UserSetting_Main() {
     return (
         <>
-            <Super_Admin_UserSetting_1/>
             <Super_Admin_UserSetting_2/>
         </>
     );
