@@ -72,7 +72,7 @@ function Super_Admin_Main(props) {
         })
         .then(function (response) {
           setEnableGameDic(response.data);
-          props.history.push("/admin_userSetting");
+          props.history.push("/super_admin_userSetting");
         })
         .catch(function(error) {console.log(error)})
 
