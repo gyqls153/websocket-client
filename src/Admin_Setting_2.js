@@ -55,7 +55,7 @@ function Admin_Setting_2() {
 
             let newBuyGameList = {};
 
-            const buyGameList = JSON.parse(response.data.buyGameList);
+            const buyGameList = response.data.buyGameList;
             
             for (const key of Object.keys(buyGameList)) {
                 newBuyGameList[key] = buyGameList[key];
@@ -63,7 +63,9 @@ function Admin_Setting_2() {
 
             setGameList(newBuyGameList);
             
-            const openGameList = JSON.parse(response.data.openGameList);
+            let openGameList = [];
+            if (response.data.openGameList.length > 0)
+                openGameList = JSON.parse(response.data.openGameList);
 
             let newOpenGameList = {};
 
@@ -91,14 +93,16 @@ function Admin_Setting_2() {
     }
     const items = []
 
-    for (const i of Object.keys(openGameList)) {
-        const data = openGameList[i];
+    for (const i of Object.keys(gameList)) {
+        const data = gameList[i];
         items.push(
         <div key={i}>
             <label htmlFor={"game_" + i}>{data.Title}</label> 
             <input name={"game_" + i} checked={!!openGameList[data.id]} onChange={(e) => changeGameCheckValue(e, data)} type="checkbox" />
         </div>)
     }
+
+    console.log(items);
 
     return (
         <>
