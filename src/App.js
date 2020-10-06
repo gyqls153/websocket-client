@@ -10,7 +10,7 @@ import Super_Admin_UserSetting_Main from './Super_Admin_UserSetting_Main';
 import Admin_Main from './Admin_Main';
 import Admin_Setting from './Admin_Setting'
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'http://18.189.126.54:4000';
 
 function App() {
   return (
