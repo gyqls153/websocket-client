@@ -105,10 +105,11 @@ function Super_Admin_UserSetting_2(props)
   }
 
   const onClick_UpdateSerialSlot = () => {
+    console.log(buyGameList);
       console.log(currentSerial);
       axios.post('/update_buyGameList', {
           Serial: currentSerial,
-          buyGameList: JSON.stringify(buyGameList)
+          buyGameList: buyGameList
       })
       .then(function (response) { 
       })

@@ -16,18 +16,6 @@ function Admin_Setting_2() {
     const [currentSerial, set_currentSerial] = useState(0);
     
     useEffect(() => {
-        async function func(){
-            await Axios.post('/gameList_current_admin', {
-                loginId: loginId
-            })
-            .then((response) => {
-                setGameList(response.data);
-            })
-            .catch((e) => { 
-                console.log(e);
-            })
-        }
-
         async function func2(){
             await Axios.post('/serial_list', {
                 loginId: loginId
@@ -41,13 +29,19 @@ function Admin_Setting_2() {
             })
         }
 
-        func();
         func2();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     const changeGameCheckValue = (e, data) => {
-        openGameList[data.id] = e.target.checked;
+        let newOpenGameList = {};
+    
+        for (const key of Object.keys(openGameList)) {
+            newOpenGameList[key] = openGameList[key];
+        }
+
+        newOpenGameList[data.id] = !newOpenGameList[data.id];
+        setOpenGameList(newOpenGameList);
     }
 
     const onClickedInsertButton = (idx) => {
@@ -58,6 +52,27 @@ function Admin_Setting_2() {
             console.log(response.data);
             set_currentSerial(serialList[idx]);
             setShowGameList(true);
+
+            let newBuyGameList = {};
+
+            const buyGameList = JSON.parse(response.data.buyGameList);
+            
+            for (const key of Object.keys(buyGameList)) {
+                newBuyGameList[key] = buyGameList[key];
+            }
+
+            setGameList(newBuyGameList);
+            
+            const openGameList = JSON.parse(response.data.openGameList);
+
+            let newOpenGameList = {};
+
+            for (const key of Object.keys(openGameList)) {
+                console.log(key);
+                newOpenGameList[key] = openGameList[key];
+            }
+
+            setOpenGameList(newOpenGameList);
         })
         .catch((e) => { 
             console.log(e);
@@ -68,11 +83,21 @@ function Admin_Setting_2() {
         console.log(currentSerial);
         Axios.post('/update_openGameList', {
             Serial: currentSerial,
-            openGameList: JSON.stringify(openGameList)
+            openGameList: openGameList
         })
         .then(function (response) { 
         })
         .catch(function (error) { console.log(error); });
+    }
+    const items = []
+
+    for (const i of Object.keys(openGameList)) {
+        const data = openGameList[i];
+        items.push(
+        <div key={i}>
+            <label htmlFor={"game_" + i}>{data.Title}</label> 
+            <input name={"game_" + i} checked={!!openGameList[data.id]} onChange={(e) => changeGameCheckValue(e, data)} type="checkbox" />
+        </div>)
     }
 
     return (
@@ -80,7 +105,7 @@ function Admin_Setting_2() {
             <p>Device 리스트</p>
             <div>
                 {
-                    serialList.map((data, i) => {
+                    serialList && serialList.map((data, i) => {
                         return (
                             <div key={i}>
                                 <label htmlFor={"game_" + i}>{data}</label> 
@@ -94,16 +119,7 @@ function Admin_Setting_2() {
                 <button onClick={() => {onClick_UpdateSerialSlot()}}>등록완료</button>
                 <p>게임 리스트</p>
                 <div>
-                    {
-                        gameList.map((data, i) => {
-                            return (
-                                <div key={i}>
-                                    <label htmlFor={"game_" + i}>{data.Title}</label> 
-                                    <input name={"game_" + i}  onChange={(e) => changeGameCheckValue(e, data)} type="checkbox" defaultChecked={openGameList[gameList[i].id]? "chekced" : ""}/>
-                                </div>
-                            )
-                        })
-                    }
+                    {items}
                 </div>
                 
                 </div>}
