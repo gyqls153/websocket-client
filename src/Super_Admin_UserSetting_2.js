@@ -70,7 +70,14 @@ function Super_Admin_UserSetting_2(props)
   },[]);
 
   const changeGameCheckValue = (e, data) => {
-      buyGameList[data.id] = e.target.checked;
+    let newBuyGameList = {};
+    
+    for (const key of Object.keys(buyGameList)) {
+        newBuyGameList[key] = buyGameList[key];
+    }
+
+    newBuyGameList[data.id] = !newBuyGameList[data.id];
+    setBuyGameList(newBuyGameList);
   }
 
   const onClickedInsertButton = (idx) => {
@@ -78,9 +85,19 @@ function Super_Admin_UserSetting_2(props)
           Serial: serialList[idx]
       })
       .then((response) => {
-          console.log(response.data);
           set_currentSerial(serialList[idx]);
           setShowGameList(true);
+
+        console.log(response.data);
+
+        let newBuyGameList = {};
+
+        for (const key of Object.keys(response.data)) {
+            console.log(key);
+            newBuyGameList[key] = response.data[key];
+        }
+
+        setBuyGameList(newBuyGameList);
       })
       .catch((e) => { 
           console.log(e);
@@ -123,7 +140,7 @@ function Super_Admin_UserSetting_2(props)
                           return (
                               <div key={i}>
                                   <label htmlFor={"game_" + i}>{data.Title}</label> 
-                                  <input name={"game_" + i}  onChange={(e) => changeGameCheckValue(e, data)} type="checkbox" defaultChecked={buyGameList[gameList[i].id]? "chekced" : ""}/>
+                                  <input name={"game_" + i} checked={!!buyGameList[data.id]} onChange={(e) => changeGameCheckValue(e, data)} type="checkbox"/>
                               </div>
                           )
                       })
