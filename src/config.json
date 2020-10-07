@@ -1,0 +1,9 @@
+{ 
+    "local" : {
+        "addressIp" : "localhost:4000"  
+    },
+    "develop" : {
+        "addressIp" : "18.189.126.54:4000"
+    },
+    "ENV": "local"
+}
