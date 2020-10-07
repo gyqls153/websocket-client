@@ -53,6 +53,7 @@ function Super_Admin_UserSetting_1(props)
         <>
             <div>
                 <button onClick= {createSerial}>시리얼 생성</button>
+                <button onClick= {onClick_UpdateSerialSlot}>등록완료</button>
             </div>
             {menuList}
         </>

@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useAdminLoginId, useEnableGameDic } from './AppContextProvider';
+import ws from './WebSocket';
 
 function Admin_Setting_2() {
     const loginId = useAdminLoginId();
@@ -104,6 +105,15 @@ function Admin_Setting_2() {
 
     console.log(items);
 
+    const onClickedRemoteCommand = (command) => {
+        ws.send(JSON.stringify({
+            From: "WebClient",
+            PacketType: "RemoteCommand",
+            Serial: currentSerial,
+            subData: command
+        }));
+    }
+
     return (
         <>
             <p>Device 리스트</p>
@@ -114,6 +124,12 @@ function Admin_Setting_2() {
                             <div key={i}>
                                 <label htmlFor={"game_" + i}>{data}</label> 
                                 <button onClick={(e) => onClickedInsertButton(i)}>수정</button>
+
+                                <button onClick={(e) => onClickedRemoteCommand("UP")}>위</button>
+                                <button onClick={(e) => onClickedRemoteCommand("DOWN")}>아래</button>
+                                <button onClick={(e) => onClickedRemoteCommand("LEFT")}>왼쪽</button>
+                                <button onClick={(e) => onClickedRemoteCommand("RIGHT")}>오른쪽</button>
+                                <button onClick={(e) => onClickedRemoteCommand("RETURN")}>리턴</button>
                             </div>
                         )
                     })
