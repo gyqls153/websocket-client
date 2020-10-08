@@ -126,7 +126,7 @@ function Super_Admin_UserSetting_2(props)
                       return (
                           <div key={i}>
                               <label htmlFor={"game_" + i}>{data}</label> 
-                              <button onClick={(e) => onClickedInsertButton(i)}>수정</button>
+                              <button onClick={(e) => onClickedInsertButton(i)}>선택</button>
                           </div>
                       )
                   })

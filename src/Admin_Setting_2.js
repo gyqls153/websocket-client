@@ -121,13 +121,13 @@ function Admin_Setting_2() {
                 {
                     serialList && serialList.map((data, i) => {
                         return (
-                            <>
                             <div key={i}>
+                            <div>
                                 <label htmlFor={"game_" + i}>{data}</label> 
                             </div>
                             <div>
                                 
-                                <button onClick={(e) => onClickedInsertButton(i)}>수정</button>
+                                <button onClick={(e) => onClickedInsertButton(i)}>선택</button>
 
                                 <button onClick={(e) => onClickedRemoteCommand("UP")}>위</button>
                                 <button onClick={(e) => onClickedRemoteCommand("DOWN")}>아래</button>
@@ -135,7 +135,7 @@ function Admin_Setting_2() {
                                 <button onClick={(e) => onClickedRemoteCommand("RIGHT")}>오른쪽</button>
                                 <button onClick={(e) => onClickedRemoteCommand("RETURN")}>리턴</button>
                             </div>
-                        </>
+                        </div>
                         )
                     })
                 }
