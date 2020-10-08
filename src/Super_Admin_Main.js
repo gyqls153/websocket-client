@@ -101,7 +101,7 @@ function Super_Admin_Main(props) {
                 adminInfoList.length > 0 && adminInfoList.map((data, i)=> {
                   return (<tr key={i}>
                     <td>{data.loginId}</td>
-                    <td><button onClick={() => {onClickButton(i)}} >수정</button></td>
+                    <td><button onClick={() => {onClickButton(i)}} >선택</button></td>
                   </tr>)
                 })
             }
