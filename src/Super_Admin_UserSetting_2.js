@@ -36,9 +36,6 @@ function Super_Admin_UserSetting_2(props)
   }
   
   useEffect(() => {
-
-        console.log("eeeeeeeeeeeee" + loginId);
-
       async function func(){
           await axios.post('/gameList_all', {
               loginId: loginId
@@ -104,6 +101,27 @@ function Super_Admin_UserSetting_2(props)
       });
   }
 
+  const onClickedRemoveButton = (idx) => {
+    axios.post('/RemoveSerial', {
+        Serial: serialList[idx],
+        loginId
+    })
+    .then((response) => {
+        console.log(response.data);
+        setSerialList(response.data);
+        setBuyGameList({});
+    })
+    .catch((e) => { 
+        console.log(e);
+    });
+}
+
+
+
+
+
+
+  
   const onClick_UpdateSerialSlot = () => {
     console.log(buyGameList);
       console.log(currentSerial);
@@ -127,6 +145,7 @@ function Super_Admin_UserSetting_2(props)
                           <div key={i}>
                               <label htmlFor={"game_" + i}>{data}</label> 
                               <button onClick={(e) => onClickedInsertButton(i)}>선택</button>
+                              <button onClick={(e) => onClickedRemoveButton(i)}>삭제</button>
                           </div>
                       )
                   })

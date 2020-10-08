@@ -80,6 +80,16 @@ function Super_Admin_Main(props) {
       .catch(function (error) { console.log(error); });
     }
 
+    const onClickRemoveButton = (idx) => {
+      axios.post('/RemoveId', {
+          loginId: adminInfoList[idx].loginId
+        })
+        .then(function (response) { 
+          setAdminInfoList(response.data);
+         })
+        .catch(function (error) { console.log(error); });
+      }
+
     return (
         <div className="App-Admin-Join">
           <div>
@@ -102,6 +112,7 @@ function Super_Admin_Main(props) {
                   return (<tr key={i}>
                     <td>{data.loginId}</td>
                     <td><button onClick={() => {onClickButton(i)}} >선택</button></td>
+                    <td><button onClick={() => {onClickRemoveButton(i)}} >삭제</button></td>
                   </tr>)
                 })
             }
