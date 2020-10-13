@@ -190,7 +190,6 @@ function Super_Admin_Main(props) {
                             className={
                               classes.submit2
                             }
-                            onClick={joinAdminUser}
                             onClick={
                               () => {
                                 onClickButton(i)

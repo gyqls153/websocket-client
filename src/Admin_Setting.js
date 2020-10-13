@@ -58,6 +58,7 @@ function Admin_Setting_2() {
   };
 
   const onClickedInsertButton = (idx) => {
+    console.log(idx);
     Axios.post('/openGameList_FromSerial', {
       Serial: serialList[idx],
     })
@@ -238,7 +239,7 @@ function Admin_Setting_2() {
                         </div>
                         <div class="topListButton">  
                            <Button
-                            onClick={(e) => onClickedInsertButton()}
+                            onClick={(e) => onClickedInsertButton(i)}
                             fullWidth
                             variant="contained"
                             color="primary"

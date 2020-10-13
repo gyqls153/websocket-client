@@ -221,10 +221,11 @@ function Super_Admin_UserSetting_2(props) {
                         <div className="serialNum">
                           <label htmlFor={'game_' + i}>{data}</label>
                         </div>
+                        
+                        <div>
                         <div className="listButton">
                           <Button
                             onClick={(e) => onClickedInsertButton(i)}
-                            type="submit"
                             fullWidth
                             variant="contained"
                             color="primary"
@@ -234,13 +235,13 @@ function Super_Admin_UserSetting_2(props) {
                           </Button>
                           <Button
                             onClick={(e) => onClickedRemoveButton(i)}
-                            type="submit"
                             fullWidth
                             variant="contained"
                             className={classes.submit2}
                           >
                             삭제
                           </Button>
+                          </div>
                         </div>
                       </li>
                     );

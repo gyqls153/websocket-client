@@ -218,6 +218,7 @@ background-color: #3f51b5 !important;
   width: 20%;
   margin-left: 5%;
   display: flex;
+  justify-items: right;
 }
 .mid-title{
   margin-top: 50px;
@@ -226,6 +227,4 @@ background-color: #3f51b5 !important;
   width: 30%;
   margin: 0 auto;
 }
-
-
 
