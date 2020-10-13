@@ -22,12 +22,13 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import config from './config.json'
 
 function Admin_Main(props) {
   const setAdminLoginId = useSetAdminLoginId();
 
   function joinAdminUser() {
-    const id = document.getElementById('id').value;
+    const id = document.getElementById('loginId').value;
     const password = document.getElementById('password').value;
 
     axios
@@ -84,9 +85,9 @@ function Admin_Main(props) {
             margin="normal"
             required
             fullWidth
-            id="ID"
+            id="loginId"
             label="아이디"
-            name="ID"
+            name="loginId"
             autoComplete="ID"
             autoFocus
           />
@@ -106,7 +107,8 @@ function Admin_Main(props) {
             label="저장하기"
           />
           <Button
-            type="submit"
+            type="button"
+            onClick={joinAdminUser}
             fullWidth
             variant="contained"
             color="primary"

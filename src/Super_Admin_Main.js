@@ -152,7 +152,7 @@ function Super_Admin_Main(props) {
                 <TextField variant="outlined" margin="normal" required fullWidth id="id" label="아이디" name="ID" autoComplete="ID" autoFocus/>
                 <TextField variant="outlined" margin="normal" required fullWidth name="password" label="비밀번호" type="password" id="password" autoComplete="current-password"/>
                 <TextField variant="outlined" margin="normal" required fullWidth name="password_verify" label="비밀번호확인" type="password_verify" id="password_verify" autoComplete="current-password"/>
-                <Button type="submit" fullWidth variant="contained" color="primary"
+                <Button type="button" fullWidth variant="contained" color="primary"
                   className={
                     classes.submit
                   }
@@ -178,16 +178,14 @@ function Super_Admin_Main(props) {
           xs={6}>
           <div className="box">
             <table>
-
-              <tbody> {
-                adminInfoList.length > 0 && adminInfoList.map((data, i) => {
+              <tbody>{adminInfoList.length > 0 && adminInfoList.map((data, i) => {
                   return (
                     <tr key={i}>
                       <td>
                         <div>{
                           data.loginId
                         }</div>
-                        <div class="bttn-group">
+                        <div className="group_Left  ">
                           <Button type="submit" size="small" variant="contained" color="primary"
                             className={
                               classes.submit2
@@ -213,7 +211,7 @@ function Super_Admin_Main(props) {
                     </tr>
                   )
                 })
-              } </tbody>
+              }</tbody>
             </table>
           </div>
         </Grid>

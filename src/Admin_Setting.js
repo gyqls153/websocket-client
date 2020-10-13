@@ -236,7 +236,17 @@ function Admin_Setting_2() {
                         <div className="serialNum">
                           <label htmlFor={'game_' + i}>{data}</label>
                         </div>
-                        <div class="topListButton">
+                        <div class="topListButton">  
+                           <Button
+                            onClick={(e) => onClickedInsertButton()}
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit2}
+                            // onClick={}
+                          >
+                            선택
+                          </Button>
                           <Button
                             onClick={(e) => onClickedInsertButton()}
                             type="submit"
@@ -246,7 +256,7 @@ function Admin_Setting_2() {
                             className={classes.submit2}
                             onClick={handleOpen}
                           >
-                            선택
+                            조작
                           </Button>
                         </div>
                       </li>

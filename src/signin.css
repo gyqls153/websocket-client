@@ -60,7 +60,8 @@ td div {
 
 }
 .bttn-group{
-
+  display: flex;
+  justify-content: center;
 }
 .makeStyles-submit2-53 {
   margin: 0 5px !important;

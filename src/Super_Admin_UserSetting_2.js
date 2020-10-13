@@ -200,7 +200,7 @@ function Super_Admin_UserSetting_2(props) {
           </Typography>
 
           <div className="topSection-2">
-            <div class="serialButton">
+            <div className="serialButton">
               <Button
                 onClick={() => createSerial()}
                 type="submit"
@@ -212,7 +212,7 @@ function Super_Admin_UserSetting_2(props) {
                 시리얼생성
               </Button>
             </div>
-            <div class="topList">
+            <div className="topList">
               <ul>
                 {serialList &&
                   serialList.map((data, i) => {
@@ -221,7 +221,7 @@ function Super_Admin_UserSetting_2(props) {
                         <div className="serialNum">
                           <label htmlFor={'game_' + i}>{data}</label>
                         </div>
-                        <div class="listButton">
+                        <div className="listButton">
                           <Button
                             onClick={(e) => onClickedInsertButton(i)}
                             type="submit"
