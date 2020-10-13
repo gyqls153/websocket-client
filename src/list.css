@@ -215,10 +215,12 @@ background-color: #3f51b5 !important;
   margin-top: 30px;  
 }
 .listButton {
-  width: 20%;
-  margin-left: 5%;
-  display: flex;
-  justify-items: right;
+/* background-color: dimgray;
+			width: 400px;
+			height: 150px;
+			border-radius: 15px;
+			display: -webkit-flex;
+			display: flex; */
 }
 .mid-title{
   margin-top: 50px;
@@ -228,3 +230,6 @@ background-color: #3f51b5 !important;
   margin: 0 auto;
 }
 
+.group_Left{
+  display:flex;
+}

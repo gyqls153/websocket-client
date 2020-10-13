@@ -126,6 +126,7 @@ function Admin_Setting_2() {
   console.log(items);
 
   const onClickedRemoteCommand = (command) => {
+    console.log(command);
     ws.send(
       JSON.stringify({
         From: 'WebClient',
@@ -296,9 +297,9 @@ function Admin_Setting_2() {
                       </div>
                       <div
                         className="return"
-                        onClick={(e) => onClickedRemoteCommand('RETURN')}
+                        onClick={(e) => onClickedRemoteCommand('enter')}
                       >
-                        <p>RETURN</p>
+                        <p>ENTER</p>
                       </div>
                       <div
                         className="left"

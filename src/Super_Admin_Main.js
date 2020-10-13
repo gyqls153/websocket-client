@@ -185,7 +185,7 @@ function Super_Admin_Main(props) {
                         <div>{
                           data.loginId
                         }</div>
-                        <div className="group_Left  ">
+                        <div className="group_Left">
                           <Button type="submit" size="small" variant="contained" color="primary"
                             className={
                               classes.submit2
@@ -196,7 +196,7 @@ function Super_Admin_Main(props) {
                               }
                           }>선택</Button>
 
-                          <Button type="submit" size="small" variant="contained" color="primary"
+                          <Button size="small" variant="contained" color="primary"
                             className={
                               classes.submit3
                             }
