@@ -121,6 +121,9 @@ function Super_Admin_Main(props) {
     },
     submit3: {
       margin: theme.spacing(3, 0, 2)
+    },
+    submit4: {
+      width: 200
     }
   }));
   const classes = useStyles();
@@ -182,7 +185,9 @@ function Super_Admin_Main(props) {
                   return (
                     <tr key={i}>
                       <td>
-                        <div>{
+                        <div className={
+                              classes.submit4
+                            }>{
                           data.loginId
                         }</div>
                         <div className="group_Left">
