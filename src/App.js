@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './signin.css';
+import './list.css';
 import { BrowserRouter as Router, Route, Switch, Link, HashRouter } from 'react-router-dom';
 import Super_Admin_Main from './Super_Admin_Main'
 import Home from './Home'
