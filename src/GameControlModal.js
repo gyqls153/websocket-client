@@ -67,8 +67,9 @@ function GameControlModal()
       };
 
       useEffect(() => {
+          
+        onClickedRemoteCommand('CONTROLL');
         return () => {
-          onClickedRemoteCommand('CONTROLL');
         } 
       }, []);
 
