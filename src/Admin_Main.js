@@ -10,7 +10,8 @@ import AppContextProvider, {
   useSetEnableGameDic,
   useSetAdminLoginId,
 } from './AppContextProvider';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
+import Avatar from '../node_modules/@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
