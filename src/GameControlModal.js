@@ -115,6 +115,16 @@ function GameControlModal()
               onClick={(e) => onClickedRemoteCommand('RIGHT')}
             >
             </div>
+            <div
+              className="back"
+              onClick={(e) => onClickedRemoteCommand('BACK')}
+            >
+            </div>
+            <div
+              className="home"
+              onClick={(e) => onClickedRemoteCommand('HOME')}
+            >
+            </div>
           </div>
         </div>
       </div>
