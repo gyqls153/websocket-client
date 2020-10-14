@@ -3,7 +3,7 @@
         "addressIp" : "localhost:4000"  
     },
     "develop" : {
-        "addressIp" : "18.189.126.54:4000"
+        "addressIp" : "13.209.69.7:4000"
     },
     "ENV": "develop"
 }
