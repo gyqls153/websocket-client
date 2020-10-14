@@ -297,7 +297,7 @@ function Admin_Setting_2() {
                       </div>
                       <div
                         className="return"
-                        onClick={(e) => onClickedRemoteCommand('enter')}
+                        onClick={(e) => onClickedRemoteCommand('RETURN')}
                       >
                         <p>ENTER</p>
                       </div>
