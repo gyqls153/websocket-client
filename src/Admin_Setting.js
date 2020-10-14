@@ -295,7 +295,7 @@ function Admin_Setting_2() {
                       >
                         <p>DOWN</p>
                       </div>
-                      <div
+                      <div 
                         className="return"
                         onClick={(e) => onClickedRemoteCommand('RETURN')}
                       >
