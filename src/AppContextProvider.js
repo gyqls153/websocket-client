@@ -15,7 +15,8 @@ const AppContextProvider = ({children}) => {
 
     const [enableGameDic, set_enableGameDic] = useState({});
     const [serialInfoList, setSerialInfoList] = useState([]);
-
+    const [currentSerial, set_currentSerial] = useState(0);
+    
     return <AppContext.Provider value={
         {
             name: "Jungmo", 
@@ -29,7 +30,10 @@ const AppContextProvider = ({children}) => {
             set_admin_loginId,
             
             serialInfoList,
-            setSerialInfoList
+            setSerialInfoList,
+            
+            currentSerial,
+            set_currentSerial
         }
     }>{children}</AppContext.Provider>
 };
@@ -80,3 +84,14 @@ export const useSetSerialInfoList = () => {
     const {setSerialInfoList} = useContext(AppContext);
     return setSerialInfoList;
 }
+
+export const useSelectedSerial = () => {
+    const {currentSerial} = useContext(AppContext);
+    return currentSerial;
+}
+
+export const useSetSelectedSerial = () => {
+    const {set_currentSerial} = useContext(AppContext);
+    return set_currentSerial;
+}
+

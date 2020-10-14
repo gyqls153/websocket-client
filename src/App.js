@@ -12,6 +12,7 @@ import Super_Admin_UserSetting_Main from './Super_Admin_UserSetting_Main';
 import Admin_Main from './Admin_Main';
 import Admin_Setting from './Admin_Setting'
 import config from './config.json'
+import GameControllModal from './GameControlModal';
 
 axios.defaults.baseURL = `http://${config[config.ENV].addressIp}`;
 
@@ -24,6 +25,7 @@ function App() {
               <Route path ='/admin_setting' component={Admin_Setting}></Route>
               <Route path ='/super_admin_main' component={Super_Admin_Main}></Route>
               <Route path ='/super_admin_userSetting' component={Super_Admin_UserSetting_Main}></Route>
+              <Route path ='/game_controll_modal' component={GameControllModal}></Route>
           </Switch>
       </Router>
     </AppContextProvider>

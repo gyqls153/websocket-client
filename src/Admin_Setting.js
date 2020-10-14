@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useAdminLoginId, useEnableGameDic } from './AppContextProvider';
+import { useAdminLoginId, useEnableGameDic, useSelectedSerial, useSetSelectedSerial } from './AppContextProvider';
 import ws from './WebSocket';
 import CastConnectedIcon from '@material-ui/icons/CastConnected';
 import Button from '@material-ui/core/Button';
@@ -15,7 +15,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
-function Admin_Setting_2() {
+function Admin_Setting_2({history}) {
   const loginId = useAdminLoginId();
 
   const [gameList, setGameList] = useState([]);
@@ -26,7 +26,8 @@ function Admin_Setting_2() {
 
   const [openGameList, setOpenGameList] = useState({});
 
-  const [currentSerial, set_currentSerial] = useState(0);
+  const currentSerial = useSelectedSerial();
+  const set_currentSerial = useSetSelectedSerial();
 
   useEffect(() => {
     async function func2() {
@@ -44,7 +45,11 @@ function Admin_Setting_2() {
 
     func2();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    return () => {
+      onClickedRemoteCommand('CONTROLL');
+    } 
+  }, [history]);
 
   const changeGameCheckValue = (e, data) => {
     let newOpenGameList = {};
@@ -58,8 +63,11 @@ function Admin_Setting_2() {
   };
 
   const onClickedControlButton = (idx) => {
-    onClickedInsertButton(idx);
-    handleOpen();
+    set_currentSerial(serialList[idx]);
+
+    history.push('/game_controll_modal')
+    // onClickedInsertButton(idx);
+    // handleOpen();
   }
 
   const onClickedInsertButton = (idx) => {
@@ -181,7 +189,9 @@ function Admin_Setting_2() {
     onClickedRemoteCommand('CONTROLL');
   };
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+    alert("");
+    console.log(e);
     setOpen(false);
     onClickedRemoteCommand('CONTROLL');
   };
