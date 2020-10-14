@@ -57,6 +57,11 @@ function Admin_Setting_2() {
     setOpenGameList(newOpenGameList);
   };
 
+  const onClickedControlButton = (idx) => {
+    onClickedInsertButton(idx);
+    handleOpen();
+  }
+
   const onClickedInsertButton = (idx) => {
     console.log(idx);
     Axios.post('/openGameList_FromSerial', {
@@ -173,10 +178,12 @@ function Admin_Setting_2() {
 
   const handleOpen = () => {
     setOpen(true);
+    onClickedRemoteCommand('CONTROLL');
   };
 
   const handleClose = () => {
     setOpen(false);
+    onClickedRemoteCommand('CONTROLL');
   };
 
   return (
@@ -250,13 +257,12 @@ function Admin_Setting_2() {
                             선택
                           </Button>
                           <Button
-                            onClick={(e) => onClickedInsertButton()}
+                            onClick={(e) => onClickedControlButton(i) }
                             type="submit"
                             fullWidth
                             variant="contained"
                             color="primary"
                             className={classes.submit2}
-                            onClick={handleOpen}
                           >
                             조작
                           </Button>
@@ -287,31 +293,26 @@ function Admin_Setting_2() {
                         className="up"
                         onClick={(e) => onClickedRemoteCommand('UP')}
                       >
-                        <p>UP</p>
                       </div>
                       <div
                         className="down"
                         onClick={(e) => onClickedRemoteCommand('DOWN')}
                       >
-                        <p>DOWN</p>
                       </div>
                       <div 
                         className="return"
                         onClick={(e) => onClickedRemoteCommand('RETURN')}
                       >
-                        <p>ENTER</p>
                       </div>
                       <div
                         className="left"
                         onClick={(e) => onClickedRemoteCommand('LEFT')}
                       >
-                        <p>LEFT</p>
                       </div>
                       <div
                         className="right"
                         onClick={(e) => onClickedRemoteCommand('RIGHT')}
                       >
-                        <p>RIGHT</p>
                       </div>
                     </div>
                   </div>
