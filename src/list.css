@@ -201,11 +201,9 @@ width: 90%;
 }
 .right{
   border-top: 100px solid transparent;
-  /* border-left: 140px solid #e5faff; */
+  border-left: 150px solid #e5faff;
   border-bottom: 100px solid transparent;
-  position: relative;
-  margin-top: -10px;
-  right: 10vh;
+  margin-left: 350px;
 }
 
 
@@ -255,7 +253,7 @@ width: 90%;
   background-color: #000000;
   width: 180px;
   height: 185px;
-  top: 208px;
+  top: 80vh;
   left: 400px;
   position: absolute;
   border-radius: 8pc;
@@ -285,7 +283,7 @@ width: 90%;
   background-color: #ffffff;
   width: 180px;
   height: 185px;
-  top: 208px;
+  top: 80vh;
   right: 400px;
   position: absolute;
   border-radius: 8pc;
