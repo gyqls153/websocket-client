@@ -188,6 +188,7 @@ width: 90%;
   border-right: 70px solid #e5faff;
   border-bottom: 50px solid transparent;
   margin-top: -10px;
+  position: relative;
   left: 9vh;
 }
 }
@@ -212,7 +213,7 @@ width: 90%;
     border-top: 50px solid transparent;
     border-left: 70px solid #e5faff;
     border-bottom: 50px solid transparent;
-    margin-left: 100px;
+    right: 9vh;
 }
 }
 
