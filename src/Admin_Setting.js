@@ -47,7 +47,6 @@ function Admin_Setting_2({history}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
 
     return () => {
-      onClickedRemoteCommand('CONTROLL');
     } 
   }, [history]);
 
@@ -186,14 +185,12 @@ function Admin_Setting_2({history}) {
 
   const handleOpen = () => {
     setOpen(true);
-    onClickedRemoteCommand('CONTROLL');
   };
 
   const handleClose = (e) => {
     alert("");
     console.log(e);
     setOpen(false);
-    onClickedRemoteCommand('CONTROLL');
   };
 
   return (

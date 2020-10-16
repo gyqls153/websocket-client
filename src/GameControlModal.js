@@ -46,12 +46,10 @@ function GameControlModal()
 
     const handleOpen = () => {
         setOpen(true);
-        onClickedRemoteCommand('CONTROLL');
       };
     
       const handleClose = (e) => {
         setOpen(false);
-        onClickedRemoteCommand('CONTROLL');
       };
 
       const onClickedRemoteCommand = (command) => {
@@ -67,9 +65,10 @@ function GameControlModal()
       };
 
       useEffect(() => {
-          
-        onClickedRemoteCommand('CONTROLL');
+        onClickedRemoteCommand('CONTROL-ON');
         return () => {
+          
+          onClickedRemoteCommand('CONTROL-OFF');
         } 
       }, []);
 
