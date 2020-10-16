@@ -188,7 +188,7 @@ width: 90%;
   border-right: 70px solid #e5faff;
   border-bottom: 50px solid transparent;
   margin-top: -10px;
-  margin-left: -100px;
+  margin-left: 15vh;
 }
 }
 
@@ -204,7 +204,7 @@ width: 90%;
   border-left: 140px solid #e5faff;
   border-bottom: 100px solid transparent;
   margin-top: -10px;
-  margin-left: 340px;
+  margin-right: -15vh;
 }
 
 
