@@ -193,9 +193,6 @@ width: 90%;
 }
 }
 
-
-
-
 .left p {
   top: -37px;
   margin-left: 72px;
@@ -277,9 +274,21 @@ width: 90%;
   border-radius: 8pc;
   background: rgb(0,0,0);
   border: 4px solid #dde1e6;
+  display: flex;
+  justify-content: center;
+}
+}
 
+.back > p {
+  font-size: 20px;
+  align-self: center;
+  color: #dde1e6;
 }
-}
+
+/* .back p {
+  top: -37px;
+  margin-left: 72px;
+} */
 
 .home {
   cursor: grab;
@@ -307,11 +316,15 @@ width: 90%;
   border-radius: 8pc;
   background: rgb(255,255,255);
   border: 4px solid #dde1e6;
-
+  display: flex;
+  justify-content: center;
 }
 }
 
-
+.home > p {
+  font-size: 20px;
+  align-self: center;
+}
 
 
 

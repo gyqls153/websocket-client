@@ -6,6 +6,28 @@ import ws from './WebSocket';
 
 function GameControlModal()
 {
+    const send = (message, callback) => {
+      this.waitForConnection(function () {
+          ws.send(message);
+          if (typeof callback !== 'undefined') {
+            callback();
+          }
+      }, 1000);
+  };
+
+  const waitForConnection = (callback, interval) => {
+      console.log(ws.readyState);
+      if (ws.readyState === 1) {
+          callback();
+      } else {
+          var that = this;
+          // optional: implement backoff for interval here
+          setTimeout(function () {
+              that.waitForConnection(callback, interval);
+          }, interval);
+      }
+  };
+
     const curentSerial = useSelectedSerial();
 
     const useStyles = makeStyles((theme) => ({
@@ -54,6 +76,7 @@ function GameControlModal()
 
       const onClickedRemoteCommand = (command) => {
         console.log(curentSerial);
+        
         ws.send(
           JSON.stringify({
             From: 'WebClient',
@@ -118,11 +141,13 @@ function GameControlModal()
               className="back"
               onClick={(e) => onClickedRemoteCommand('BACK')}
             >
+              <p>BACK</p>
             </div>
             <div
               className="home"
               onClick={(e) => onClickedRemoteCommand('HOME')}
             >
+                <p>HOME</p>
             </div>
           </div>
         </div>
