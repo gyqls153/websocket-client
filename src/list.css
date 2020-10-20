@@ -326,11 +326,27 @@ width: 90%;
   align-self: center;
 }
 
-
-
-
-
-
+@media (max-width: 480px) {
+  .off{
+    cursor: grab;
+    background-color: #f55f9d;
+    width: 100px;
+    height: 100px;
+    top: 10vh;
+    position: absolute;
+    border-radius: 8pc;
+    background: rgb(255,29,172);
+    background: linear-gradient(150deg, rgb(117 255 217) 25%, rgb(217 92 225) 92%, rgba(0,212,255,1) 100%);
+    border: 4px solid #dde1e6;
+    display: flex;
+    justify-content: center;
+  }
+  }
+  
+  .off > p {
+    font-size: 20px;
+    align-self: center;
+  }
 
 .MuiTypography-h5{
   font-weight: 600 !important;

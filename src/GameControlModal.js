@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useSelectedSerial } from "./AppContextProvider";
 import ws from './WebSocket';
 
-function GameControlModal()
+function GameControlModal({history})
 {
     const send = (message, callback) => {
       this.waitForConnection(function () {
@@ -112,6 +112,10 @@ function GameControlModal()
       <div className={classes.paper}>
         <div className="modal">
           <div className="joyStick">
+            <div className="off"
+            onClick={(e) => {console.log(history);history.goBack(); onClickedRemoteCommand('CONTROL-OFF')}}>
+                <p>off</p>
+            </div>
             <div
               className="up"
               onClick={(e) => onClickedRemoteCommand('UP')}
