@@ -240,7 +240,7 @@ function Admin_Setting_2({history}) {
           </Typography>
 
           <div className="topSection">
-            <div class="topList">
+            <div className="topList">
               <Typography component="h2" variant="h7">
                 Serial Number
               </Typography>
@@ -252,7 +252,7 @@ function Admin_Setting_2({history}) {
                         <div className="serialNum">
                           <label htmlFor={'game_' + i}>{data}</label>
                         </div>
-                        <div class="topListButton">  
+                        <div className="topListButton">  
                            <Button
                             onClick={(e) => onClickedInsertButton(i)}
                             fullWidth
@@ -326,7 +326,7 @@ function Admin_Setting_2({history}) {
                 </div>
               </Fade>
             </Modal>
-            <div class="submitButton">
+            <div className="submitButton">
               <Button
                 type="submit"
                 fullWidth

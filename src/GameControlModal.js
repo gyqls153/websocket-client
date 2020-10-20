@@ -1,13 +1,17 @@
 import { Fade, makeStyles, Modal } from "@material-ui/core";
 import Backdrop from '@material-ui/core/Backdrop';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelectedSerial } from "./AppContextProvider";
 import ws from './WebSocket';
 
 function GameControlModal({history})
 {
+    console.log("GameControlModal");
+
+    let [isOn, setOnOff] = useState(false);
+    
     const send = (message, callback) => {
-      this.waitForConnection(function () {
+      waitForConnection(function () {
           ws.send(message);
           if (typeof callback !== 'undefined') {
             callback();
@@ -16,14 +20,12 @@ function GameControlModal({history})
   };
 
   const waitForConnection = (callback, interval) => {
-      console.log(ws.readyState);
       if (ws.readyState === 1) {
           callback();
       } else {
-          var that = this;
           // optional: implement backoff for interval here
           setTimeout(function () {
-              that.waitForConnection(callback, interval);
+              waitForConnection(callback, interval);
           }, interval);
       }
   };
@@ -75,9 +77,7 @@ function GameControlModal({history})
       };
 
       const onClickedRemoteCommand = (command) => {
-        console.log(curentSerial);
-        
-        ws.send(
+        send(
           JSON.stringify({
             From: 'WebClient',
             PacketType: 'RemoteCommand',
@@ -88,9 +88,8 @@ function GameControlModal({history})
       };
 
       useEffect(() => {
-        onClickedRemoteCommand('CONTROL-ON');
+        onClickedRemoteCommand('CONTROL-OFF');
         return () => {
-          
           onClickedRemoteCommand('CONTROL-OFF');
         } 
       }, []);
@@ -112,9 +111,22 @@ function GameControlModal({history})
       <div className={classes.paper}>
         <div className="modal">
           <div className="joyStick">
-            <div className="off"
-            onClick={(e) => {console.log(history);history.goBack(); onClickedRemoteCommand('CONTROL-OFF')}}>
-                <p>off</p>
+            <div className={isOn ? "on" : "off"}
+                onClick={(e) => {
+                  if (isOn)
+                  {
+                    onClickedRemoteCommand('CONTROL-OFF') 
+                    setOnOff(false);
+                  }
+                    
+                  else
+                  {
+                    onClickedRemoteCommand('CONTROL-ON')
+                    setOnOff(true);
+                  }
+                  }
+                }>
+                <p>{isOn ? "on" : "off"}</p>
             </div>
             <div
               className="up"
