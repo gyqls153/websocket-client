@@ -30,8 +30,8 @@ function Admin_Main(props) {
   const setAdminLoginId = useSetAdminLoginId();
 
   function joinAdminUser() {
-    const id = document.getElementById('loginId').value;
-    const password = document.getElementById('password').value;
+    const id = document.getElementById('User_Name').value;
+    const password = document.getElementById('Password').value;
 
     axios
       .post('/admin_login', {
@@ -72,7 +72,11 @@ function Admin_Main(props) {
       margin: theme.spacing(3, 0, 2),
     },
   }));
-  const classes = useStyles();
+  
+  const NANUM_GOTHIC = styled.p`
+  @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+  font-family: 'Nanum Gothic', sans-serif;
+  `
 
   const LOGO = styled.img`
   width: 150px;
@@ -85,6 +89,7 @@ function Admin_Main(props) {
   height: 100vh;
   display: flex
   `
+
   const FORM = styled.div`
   background-Color: white;
   height: 50vh;
@@ -102,6 +107,11 @@ function Admin_Main(props) {
     margin-bottom: 10px;
     height: 3vh;
     margin-left: 10px;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 80%;
+    
+    background-Color: white;
   `
 
   const ACCOUNT_LABEL = styled.label`
@@ -116,19 +126,21 @@ function Admin_Main(props) {
     height: 7vh;
     background-Color: red;
     border: 0;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
   `
 
   return (
     <MAIN_BACKGROUND>
     <LOGO src="Remote/Logo_Spark.png"></LOGO>
     <FORM>
-      <ACCOUNT_LABEL>Create Account</ACCOUNT_LABEL>
+      <ACCOUNT_LABEL><NANUM_GOTHIC>Sign In</NANUM_GOTHIC></ACCOUNT_LABEL>
       <INPUT type="text" placeholder="User Name" id="User_Name"></INPUT>
-      <INPUT type="text" placeholder="Email" id="Email"></INPUT>
-      <INPUT type="text" placeholder="Name" id="Name"></INPUT>
-      <INPUT type="password" placeholder="Passworld" id="Passworld"></INPUT>
-      <INPUT type="password" placeholder="Confirm Passworld" id="Confirm_Passworld"></INPUT>
-      <BUTTON>Register</BUTTON>
+      <INPUT type="password" placeholder="Password" id="Password"></INPUT>
+      <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </FORM>
     </MAIN_BACKGROUND>
   );

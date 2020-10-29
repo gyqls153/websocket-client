@@ -3,6 +3,105 @@ import Backdrop from '@material-ui/core/Backdrop';
 import React, { useEffect, useState } from "react";
 import { useSelectedSerial } from "./AppContextProvider";
 import ws from './WebSocket';
+import styled from 'styled-components'
+
+const ARROW_UP_BTN = styled.button`
+  position: absolute;
+  transform:translateX(-50%) rotate(270deg);
+  left:50%;
+  top:25%;
+  border : 0;
+`
+
+const ARROW_LEFT_BTN = styled.button`
+  position: absolute;
+  transform:translateX(-50%) rotate(180deg);
+  left:20%;
+  top:40%;
+  border : 0;
+`
+
+const ARROW_RIGHT_BTN = styled.button`
+  position: absolute;
+  transform:translateX(-50%) rotate(0deg);
+  left:80%;
+  top:40%;
+  border : 0;
+`
+
+const ARROW_DOWN_BTN = styled.button`
+  position: absolute;
+  transform:translateX(-50%) rotate(90deg);
+  left:50%;
+  top:55%;
+  border : 0;
+`
+
+const ARROW_CENTOR_BTN = styled.button`
+  position: absolute;
+  transform:translateX(-50%) rotate(90deg);
+  left:50%;
+  top:40%;
+  border : 0;
+`
+
+const ARROW_IMG = styled.img`
+  width: 100px;
+  `
+
+const JOYSTICK_ON = styled.img`
+  width: 50px;
+  margin-right: 15px;
+  `
+
+const JOYSTICK_OFF = styled.img`
+  width: 50px;
+  margin-right: 15px;
+`
+
+const HEADER = styled.div`
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const BACK_BUTTON = styled.img`
+  width: 20px;
+  margin-left: 10px;
+`
+
+const HOME_BUTTON = styled.button`
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    margin-left: 10%;
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    border: 0;
+    background: red;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    color: white;
+`
+
+const NANUM_GOTHIC = styled.p`
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+font-family: 'Nanum Gothic', sans-serif;
+color: white;
+display: inline;
+
+margin-left: 30px;
+`
+
+const MAIN_BACKGROUND = styled.div`
+background-Color: #ECECEC;
+height: 100vh;
+display: flex;
+`
 
 function GameControlModal({history})
 {
@@ -66,7 +165,7 @@ function GameControlModal({history})
       const classes = useStyles();
 
 
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
         setOpen(true);
@@ -92,84 +191,26 @@ function GameControlModal({history})
         return () => {
           onClickedRemoteCommand('CONTROL-OFF');
         } 
-      }, []);
+      }, [open]);
 
 
-    return (<Modal
-    aria-labelledby="transition-modal-title"
-    aria-describedby="transition-modal-description"
-    className={classes.modal}
-    open={open}
-    onClose={handleClose}
-    closeAfterTransition
-    BackdropComponent={Backdrop}
-    BackdropProps={{
-      timeout: 500,
-    }}
-  >
-    <Fade in={open}>
-      <div className={classes.paper}>
-        <div className="modal">
-          <div className="joyStick">
-            <div className={isOn ? "on" : "off"}
-                onClick={(e) => {
-                  if (isOn)
-                  {
-                    onClickedRemoteCommand('CONTROL-OFF') 
-                    setOnOff(false);
-                  }
-                    
-                  else
-                  {
-                    onClickedRemoteCommand('CONTROL-ON')
-                    setOnOff(true);
-                  }
-                  }
-                }>
-                <p>{isOn ? "on" : "off"}</p>
-            </div>
-            <div
-              className="up"
-              onClick={(e) => onClickedRemoteCommand('UP')}
-            >
-            </div>
-            <div
-              className="down"
-              onClick={(e) => onClickedRemoteCommand('DOWN')}
-            >
-            </div>
-            <div 
-              className="return"
-              onClick={(e) => onClickedRemoteCommand('RETURN')}
-            >
-            </div>
-            <div
-              className="left"
-              onClick={(e) => onClickedRemoteCommand('LEFT')}
-            >
-            </div>
-            <div
-              className="right"
-              onClick={(e) => onClickedRemoteCommand('RIGHT')}
-            >
-            </div>
-            <div
-              className="back"
-              onClick={(e) => onClickedRemoteCommand('BACK')}
-            >
-              <p>BACK</p>
-            </div>
-            <div
-              className="home"
-              onClick={(e) => onClickedRemoteCommand('HOME')}
-            >
-                <p>HOME</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Fade>
-  </Modal>)
+    return (
+      <MAIN_BACKGROUND>
+        <HEADER>
+          <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" ></BACK_BUTTON>
+          <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
+          {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
+        </HEADER>
+        <ARROW_UP_BTN onClick={() => onClickedRemoteCommand('UP')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_UP_BTN>
+        <ARROW_DOWN_BTN onClick={() => onClickedRemoteCommand('DOWN')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_DOWN_BTN>
+        <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_LEFT_BTN>
+        <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_RIGHT_BTN>
+        <ARROW_CENTOR_BTN onClick={() => onClickedRemoteCommand('RETURN')}><ARROW_IMG src="Remote/Btn_Center.PNG"/></ARROW_CENTOR_BTN>
+        <HOME_BUTTON>Home</HOME_BUTTON>
+      </MAIN_BACKGROUND>
+      
+    )
 }
 
 export default GameControlModal;
+
