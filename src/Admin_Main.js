@@ -24,6 +24,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import config from './config.json'
+import styled from 'styled-components'
 
 function Admin_Main(props) {
   const setAdminLoginId = useSetAdminLoginId();
@@ -51,7 +52,10 @@ function Admin_Main(props) {
   }
   const useStyles = makeStyles((theme) => ({
     paper: {
-      marginTop: theme.spacing(8),
+      marginTop: theme.spacing(30),
+      marginLeft: theme.spacing(30),
+      marginRight: theme.spacing(30),
+      backgroundColor: 'black',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -70,69 +74,63 @@ function Admin_Main(props) {
   }));
   const classes = useStyles();
 
+  const LOGO = styled.img`
+  width: 150px;
+  position: absolute; 
+  left: 50%; transform: translateX(-50%);
+  top: 5%
+  `
+  const MAIN_BACKGROUND = styled.div`
+  background-Color: black;
+  height: 100vh;
+  display: flex
+  `
+  const FORM = styled.div`
+  background-Color: white;
+  height: 50vh;
+  position: absolute; 
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  `
+
+  const INPUT = styled.input`
+    margin-bottom: 10px;
+    height: 3vh;
+    margin-left: 10px;
+  `
+
+  const ACCOUNT_LABEL = styled.label`
+    margin-top: 30px;
+    margin-bottom: 30px;
+  `
+
+  const BUTTON = styled.button`
+    position:absolute; 
+    bottom:0px;
+    width: 100%;
+    height: 7vh;
+    background-Color: red;
+    border: 0;
+  `
+
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="loginId"
-            label="아이디"
-            name="loginId"
-            autoComplete="ID"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="비밀번호"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="저장하기"
-          />
-          <Button
-            type="button"
-            onClick={joinAdminUser}
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            로그인
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              {/* <Link href="#" variant="body2">
-                Forgot password?
-              </Link> */}
-            </Grid>
-            <Grid item>
-              {/* <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link> */}
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={8}></Box>
-    </Container>
+    <MAIN_BACKGROUND>
+    <LOGO src="Remote/Logo_Spark.png"></LOGO>
+    <FORM>
+      <ACCOUNT_LABEL>Create Account</ACCOUNT_LABEL>
+      <INPUT type="text" placeholder="User Name" id="User_Name"></INPUT>
+      <INPUT type="text" placeholder="Email" id="Email"></INPUT>
+      <INPUT type="text" placeholder="Name" id="Name"></INPUT>
+      <INPUT type="password" placeholder="Passworld" id="Passworld"></INPUT>
+      <INPUT type="password" placeholder="Confirm Passworld" id="Confirm_Passworld"></INPUT>
+      <BUTTON>Register</BUTTON>
+    </FORM>
+    </MAIN_BACKGROUND>
   );
 }
 
