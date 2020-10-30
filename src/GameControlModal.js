@@ -70,6 +70,7 @@ const HEADER = styled.div`
 
 const BACK_BUTTON = styled.img`
   width: 20px;
+  height: 30px;
   margin-left: 10px;
 `
 
@@ -98,7 +99,7 @@ margin-left: 30px;
 `
 
 const MAIN_BACKGROUND = styled.div`
-background-Color: #ECECEC;
+background-color: #D5D5D5;
 height: 100vh;
 display: flex;
 `
@@ -167,14 +168,6 @@ function GameControlModal({history})
 
     const [open, setOpen] = React.useState(false);
 
-    const handleOpen = () => {
-        setOpen(true);
-      };
-    
-      const handleClose = (e) => {
-        setOpen(false);
-      };
-
       const onClickedRemoteCommand = (command) => {
         send(
           JSON.stringify({
@@ -187,7 +180,16 @@ function GameControlModal({history})
       };
 
       useEffect(() => {
-        onClickedRemoteCommand('CONTROL-OFF');
+        console.log(open);
+
+        if (open)
+        {
+          onClickedRemoteCommand('CONTROL-ON');
+        }
+        else
+        {
+          onClickedRemoteCommand('CONTROL-OFF');
+        }
         return () => {
           onClickedRemoteCommand('CONTROL-OFF');
         } 
@@ -197,7 +199,7 @@ function GameControlModal({history})
     return (
       <MAIN_BACKGROUND>
         <HEADER>
-          <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" ></BACK_BUTTON>
+          <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" onClick={() => onClickedRemoteCommand('BACK')}></BACK_BUTTON>
           <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
           {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
         </HEADER>
@@ -206,7 +208,7 @@ function GameControlModal({history})
         <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_LEFT_BTN>
         <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_RIGHT_BTN>
         <ARROW_CENTOR_BTN onClick={() => onClickedRemoteCommand('RETURN')}><ARROW_IMG src="Remote/Btn_Center.PNG"/></ARROW_CENTOR_BTN>
-        <HOME_BUTTON>Home</HOME_BUTTON>
+        <HOME_BUTTON onClick={() => onClickedRemoteCommand('HOME')}>Home</HOME_BUTTON>
       </MAIN_BACKGROUND>
       
     )

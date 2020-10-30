@@ -76,6 +76,7 @@ function Admin_Main(props) {
   const NANUM_GOTHIC = styled.p`
   @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
   font-family: 'Nanum Gothic', sans-serif;
+  color: white;
   `
 
   const LOGO = styled.img`
@@ -91,7 +92,7 @@ function Admin_Main(props) {
   `
 
   const FORM = styled.div`
-  background-Color: white;
+  background-Color: black;
   height: 50vh;
   position: absolute; 
   top: 20%;
