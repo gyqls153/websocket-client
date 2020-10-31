@@ -111,7 +111,6 @@ function Admin_Main(props) {
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     width: 80%;
-    
     background-Color: white;
   `
 

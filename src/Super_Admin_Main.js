@@ -22,6 +22,8 @@ import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useHistory} from 'react-router-dom';
+import styled from 'styled-components'
+
 
 function Super_Admin_Main(props) {
   const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
@@ -49,6 +51,8 @@ function Super_Admin_Main(props) {
     const id = document.getElementById("id").value;
     const password = document.getElementById("password").value;
     const password_verify = document.getElementById("password_verify").value;
+    const email = document.getElementById("email").value;
+    const name = document.getElementById("name").value;
 
     if (password !== password_verify) {
       alert("비밀번호가 일치하지 않습니다.");
@@ -57,7 +61,9 @@ function Super_Admin_Main(props) {
 
     axios.post('/admin_join', {
       id: id,
-      password: password
+      password: password,
+      email: email,
+      name: name
     }).then(function (response) {
       if (response.data.isSuccess) {
         alert("등록 성공")
@@ -128,101 +134,80 @@ function Super_Admin_Main(props) {
   }));
   const classes = useStyles();
 
+
+  const NANUM_GOTHIC = styled.p`
+  @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+  font-family: 'Nanum Gothic', sans-serif;
+  color: black;
+  `
+
+  const LOGO = styled.img`
+  width: 150px;
+  position: absolute; 
+  left: 50%; transform: translateX(-50%);
+  top: 5%
+  `
+  const MAIN_BACKGROUND = styled.div`
+  background-Color: black;
+  height: 100vh;
+  display: flex
+  `
+
+  const FORM = styled.div`
+  background-Color: white;
+  height: 50vh;
+  position: absolute; 
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  `
+
+  const INPUT = styled.input`
+    margin-bottom: 10px;
+    height: 3vh;
+    margin-left: 10px;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 80%;
+    background-Color: white;
+  `
+
+  const ACCOUNT_LABEL = styled.label`
+    margin-top: 30px;
+    margin-bottom: 30px;
+  `
+
+  const BUTTON = styled.button`
+    position:absolute; 
+    bottom:0px;
+    width: 100%;
+    height: 7vh;
+    background-Color: red;
+    border: 0;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+  `
+
   return (
-    <div className="App-Admin-Join">
-
-      <Grid container
-        spacing={3}>
-        <Grid item
-          xs={6}>
-          <div className="boxLeft">
-            <CssBaseline/>
-            <div className={
-              classes.paper
-            }>
-              <Avatar className={
-                classes.avatar
-              }>
-                <LockOutlinedIcon/>
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                관리자 등록
-              </Typography>
-              <form className={
-                  classes.form
-                }
-                noValidate>
-                <TextField variant="outlined" margin="normal" required fullWidth id="id" label="아이디" name="ID" autoComplete="ID" autoFocus/>
-                <TextField variant="outlined" margin="normal" required fullWidth name="password" label="비밀번호" type="password" id="password" autoComplete="current-password"/>
-                <TextField variant="outlined" margin="normal" required fullWidth name="password_verify" label="비밀번호확인" type="password_verify" id="password_verify" autoComplete="current-password"/>
-                <Button type="button" fullWidth variant="contained" color="primary"
-                  className={
-                    classes.submit
-                  }
-                  onClick={joinAdminUser}>
-                  등록하기
-                </Button>
-                <Grid container>
-                  <Grid item xs>
-                    {/* <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link> */} </Grid>
-                  <Grid item>
-                    {/* <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link> */} </Grid>
-                </Grid>
-              </form>
-            </div>
-            <Box mt={8}></Box>
-          </div>
-        </Grid>
-        <Grid item
-          xs={6}>
-          <div className="box">
-            <table>
-              <tbody>{adminInfoList.length > 0 && adminInfoList.map((data, i) => {
-                  return (
-                    <tr key={i}>
-                      <td>
-                        <div className={
-                              classes.submit4
-                            }>{
-                          data.loginId
-                        }</div>
-                        <div className="group_Left">
-                          <Button type="submit" size="small" variant="contained" color="primary"
-                            className={
-                              classes.submit2
-                            }
-                            onClick={
-                              () => {
-                                onClickButton(i)
-                              }
-                          }>선택</Button>
-
-                          <Button size="small" variant="contained" color="primary"
-                            className={
-                              classes.submit3
-                            }
-                            onClick={
-                              () => {
-                                onClickRemoveButton(i)
-                              }
-                          }>삭제</Button>
-                        </div>
-                      </td>
-                    </tr>
-                  )
-                })
-              }</tbody>
-            </table>
-          </div>
-        </Grid>
-      </Grid>
-    </div>
-
-
+    <MAIN_BACKGROUND>
+    <LOGO src="Remote/Logo_Spark.png"></LOGO>
+    <FORM>
+      <ACCOUNT_LABEL><NANUM_GOTHIC>Create Account</NANUM_GOTHIC></ACCOUNT_LABEL>
+      <INPUT type="text" placeholder="User Name" id="id"></INPUT>
+      <INPUT type="email" placeholder="Email" id="email"></INPUT>
+      <INPUT type="text" placeholder="Name" id="name"></INPUT>
+      <INPUT type="password" placeholder="Password" id="password"></INPUT>
+      <INPUT type="password" placeholder="Confirm Password" id="password_verify"></INPUT>
+      <BUTTON onClick={joinAdminUser}>Register</BUTTON>
+    </FORM>
+    </MAIN_BACKGROUND>
   );
 };
 
