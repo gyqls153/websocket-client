@@ -18,10 +18,13 @@ left: 50%; transform: translateX(-50%);
 top: 2%
 `
 
+const TOP = styled.div`
+    padding-top: 30px;
+`;
+
 const NANUM_GOTHIC = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    color: black;
     text-align: center;
     margin: 0px;
     color: white;
@@ -66,7 +69,7 @@ const BUTTON = styled.button`
 function Super_Admin_Manage_Page3(props) {
     const fruits = ['사과','배','바나나','포도','수박'];
     const fruitsList = fruits.map(
-    (fruit) => (<Super_Admin_Manage_Customer2 customerName={fruit}></Super_Admin_Manage_Customer2>)
+    (fruit) => (<Super_Admin_Manage_Customer2 customerName={fruit} serial="dsfdsfdsfdsfdsfds-dsfdsfdsfdsfds-dsfdsfdsffsdf"></Super_Admin_Manage_Customer2>)
     );
 
     const setCurrentCustomer = useSetCurrentCustomer();
@@ -76,7 +79,7 @@ function Super_Admin_Manage_Page3(props) {
     return(
         <>
             <HEADER>
-                <NANUM_GOTHIC>{currentCustomer}</NANUM_GOTHIC>
+                <TOP><NANUM_GOTHIC>{currentCustomer}</NANUM_GOTHIC></TOP>
             </HEADER>
             <MAINBACKGROUND>
               {fruitsList}                
