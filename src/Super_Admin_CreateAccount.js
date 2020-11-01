@@ -50,7 +50,6 @@ function Super_Admin_CreateAccount(props) {
     const id = document.getElementById("id").value;
     const password = document.getElementById("password").value;
     const password_verify = document.getElementById("password_verify").value;
-    const email = document.getElementById("email").value;
     const name = document.getElementById("name").value;
 
     if (password !== password_verify) {
@@ -61,7 +60,6 @@ function Super_Admin_CreateAccount(props) {
     axios.post('/admin_join', {
       id: id,
       password: password,
-      email: email,
       name: name
     }).then(function (response) {
       if (response.data.isSuccess) {
@@ -207,12 +205,12 @@ function Super_Admin_CreateAccount(props) {
     </HEADER>
     <MAIN_BACKGROUND>
     <FORM>
-      <ACCOUNT_LABEL><NANUM_GOTHIC>Create Account</NANUM_GOTHIC></ACCOUNT_LABEL>
+      <ACCOUNT_LABEL><NANUM_GOTHIC>Registration information</NANUM_GOTHIC></ACCOUNT_LABEL>
       <INPUT type="text" placeholder="할당 ID" id="id"></INPUT>
       <INPUT type="text" placeholder="Name" id="name"></INPUT>
       <INPUT type="password" placeholder="Password" id="password"></INPUT>
       <INPUT type="password" placeholder="Confirm Password" id="password_verify"></INPUT>
-      <BUTTON onClick={joinAdminUser}>Register</BUTTON>
+      <BUTTON onClick={joinAdminUser}>등록</BUTTON>
     </FORM>
     </MAIN_BACKGROUND></>
   );
