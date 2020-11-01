@@ -17,6 +17,8 @@ const AppContextProvider = ({children}) => {
     const [serialInfoList, setSerialInfoList] = useState([]);
     const [currentSerial, set_currentSerial] = useState(0);
     
+    const [currentCustomer, set_currentCustomer] = useState("");
+    
     return <AppContext.Provider value={
         {
             name: "Jungmo", 
@@ -33,7 +35,10 @@ const AppContextProvider = ({children}) => {
             setSerialInfoList,
             
             currentSerial,
-            set_currentSerial
+            set_currentSerial,
+
+            currentCustomer,
+            set_currentCustomer
         }
     }>{children}</AppContext.Provider>
 };
@@ -45,14 +50,24 @@ export const useName = () => {
     return name;
 }
 
+export const useSelectedLoginId = () => {
+    const {value} = useContext(AppContext);
+    return value;
+}
+
 export const useSetSelectedLoginId = () => {
     const {set_selectedLoginId} = useContext(AppContext);
     return set_selectedLoginId;
 }
 
-export const useSelectedLoginId = () => {
-    const {value} = useContext(AppContext);
-    return value;
+export const useCurrentCustomer = () => {
+    const {currentCustomer} = useContext(AppContext);
+    return currentCustomer;
+}
+
+export const useSetCurrentCustomer = () => {
+    const {set_currentCustomer} = useContext(AppContext);
+    return set_currentCustomer;
 }
 
 export const useSetAdminLoginId = () => {
