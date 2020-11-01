@@ -46,6 +46,10 @@ const MAINBACKGROUND = styled.div`
     height: 100vh;
 `;
 
+const MAINGAP = styled.div`
+    height: 10px;
+`;
+
 const BUTTON = styled.button`
     position:absolute; 
     bottom:10px;
@@ -82,7 +86,8 @@ function Super_Admin_Manage_Page3(props) {
                 <TOP><NANUM_GOTHIC>{currentCustomer}</NANUM_GOTHIC></TOP>
             </HEADER>
             <MAINBACKGROUND>
-              {fruitsList}                
+                <MAINGAP/>
+                    {fruitsList}
             </MAINBACKGROUND>
         </>
     );

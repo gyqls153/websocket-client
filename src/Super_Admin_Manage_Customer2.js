@@ -21,6 +21,7 @@ const IconeButton = styled.img`
 
 const RemoveButton = styled.img`
     margin-top: 5px;
+    margin-bottom: 5px;
     margin-right: 20px;
     width: 30px;
     height: 30px;
@@ -50,7 +51,7 @@ function Super_Admin_Manage_Customer2(props) {
         <TemplateStyle>  
             <IconeButton src="Common/List_icon2.png"></IconeButton>
             <TextWrap><TextMain>{props.customerName}</TextMain><TextMain2>{props.serial}</TextMain2></TextWrap>
-            <RemoveButton src="Common/List_icon1.png"></RemoveButton>
+            <RemoveButton src="Common/Remove_Button.png"></RemoveButton>
         </TemplateStyle>
     );
 }
