@@ -103,7 +103,7 @@ function Super_Admin_Manage_Page1(props) {
                 <LOGO src="Super_Admin/Login_Logo.png"></LOGO>
             </HEADER>
             <MAINBACKGROUND>
-            <ADDBUTTON src="Common/Add_Button.png"></ADDBUTTON>
+            <ADDBUTTON onClick={() => {props.history.push("super_admin_create_account")}} src="Common/Add_Button.png"></ADDBUTTON>
               {fruitsList}                
             </MAINBACKGROUND>
         </>
