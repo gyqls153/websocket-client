@@ -5,5 +5,5 @@
     "develop" : {
         "addressIp" : "13.209.190.34:4000"
     },
-    "ENV": "develop"
+    "ENV": "local"
 }

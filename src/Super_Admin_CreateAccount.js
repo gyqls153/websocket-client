@@ -25,7 +25,7 @@ import {useHistory} from 'react-router-dom';
 import styled from 'styled-components'
 
 
-function Super_Admin_Main(props) {
+function Super_Admin_CreateAccount(props) {
   const [adminInfoList_recv, setAdminInfoList_recv] = useState(false);
   const [adminInfoList, setAdminInfoList] = useState([]);
 
@@ -40,7 +40,6 @@ function Super_Admin_Main(props) {
       }).catch(function (error) {
         console.log(error);
       });
-
     }
 
     func();
@@ -142,19 +141,19 @@ function Super_Admin_Main(props) {
   `
 
   const LOGO = styled.img`
-  width: 150px;
+  width: 100px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 5%
+  top: 2%
   `
   const MAIN_BACKGROUND = styled.div`
-  background-Color: black;
+  background-Color: gray;
   height: 100vh;
   display: flex
   `
 
   const FORM = styled.div`
-  background-Color: white;
+  background-Color: gray;
   height: 50vh;
   position: absolute; 
   top: 20%;
@@ -195,20 +194,28 @@ function Super_Admin_Main(props) {
     font-weight: bold;
   `
 
+  
+  const HEADER = styled.div`
+      background-color: red;
+      height: 70px;
+  `;
+
   return (
+    <>
+    <HEADER>
+        <LOGO src="Super_Admin/Login_Logo.png"></LOGO>
+    </HEADER>
     <MAIN_BACKGROUND>
-    <LOGO src="Remote/Logo_Spark.png"></LOGO>
     <FORM>
       <ACCOUNT_LABEL><NANUM_GOTHIC>Create Account</NANUM_GOTHIC></ACCOUNT_LABEL>
-      <INPUT type="text" placeholder="User Name" id="id"></INPUT>
-      <INPUT type="email" placeholder="Email" id="email"></INPUT>
+      <INPUT type="text" placeholder="할당 ID" id="id"></INPUT>
       <INPUT type="text" placeholder="Name" id="name"></INPUT>
       <INPUT type="password" placeholder="Password" id="password"></INPUT>
       <INPUT type="password" placeholder="Confirm Password" id="password_verify"></INPUT>
       <BUTTON onClick={joinAdminUser}>Register</BUTTON>
     </FORM>
-    </MAIN_BACKGROUND>
+    </MAIN_BACKGROUND></>
   );
 };
 
-export default Super_Admin_Main;
+export default Super_Admin_CreateAccount;
