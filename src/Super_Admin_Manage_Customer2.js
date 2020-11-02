@@ -47,11 +47,24 @@ const TextWrap = styled.div`
 `;
 
 function Super_Admin_Manage_Customer2(props) {
+
+    function onRemoveButtonClick(id) {
+        console.log("clicked");
+        /* eslint no-restricted-globals:0 */
+        const result = confirm("등록 제품을 삭제하시겠습니까?");
+        if (result) {
+            props.removeFunc(id)
+        }
+        else {
+
+        }
+    }
+
     return(
         <TemplateStyle>  
             <IconeButton src="Common/List_icon2.png"></IconeButton>
             <TextWrap><TextMain>{props.customerName}</TextMain><TextMain2>{props.serial}</TextMain2></TextWrap>
-            <RemoveButton src="Common/Remove_Button.png"></RemoveButton>
+            <RemoveButton src="Common/Remove_Button.png" onClick={() => onRemoveButtonClick(props.id)}></RemoveButton>
         </TemplateStyle>
     );
 }

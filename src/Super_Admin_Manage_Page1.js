@@ -24,36 +24,10 @@ const NANUM_GOTHIC = styled.p`
     margin: 0px;
     `
 
-const INPUT = styled.input`
-    margin-bottom: 10px;
-    height: 3vh;  
-    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-    font-family: 'Nanum Gothic', sans-serif;
-    width: 50%;
-    background-Color: white;
-    padding: 0px;
-    margin-left: 25%;
-    `
-
 const MAINBACKGROUND = styled.div`
     background-color: gray;
     height: 100vh;
 `;
-
-const BUTTON = styled.button`
-    position:absolute; 
-    bottom:10px;
-    left: 25%;
-    width: 50%;
-    height: 6vh;
-    background-Color: red;
-    border: 0;
-    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-  `;
 
   const ADDBUTTON = styled.img`
     margin-left: 40%;

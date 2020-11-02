@@ -193,16 +193,23 @@ function Super_Admin_CreateAccount(props) {
     color: white;
     font-weight: bold;
   `
-
   
   const HEADER = styled.div`
       background-color: red;
       height: 70px;
   `;
 
+
+  const BACKBUTTON = styled.img`
+    width: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    `
+
   return (
     <>
     <HEADER>
+        <BACKBUTTON onClick={() => props.history.goBack()} src="Remote/Btn_BackArrow.PNG"></BACKBUTTON>
         <LOGO src="Super_Admin/Login_Logo.png"></LOGO>
     </HEADER>
     <MAIN_BACKGROUND>

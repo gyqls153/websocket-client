@@ -5,49 +5,50 @@ import { useSelectedSerial } from "./AppContextProvider";
 import ws from './WebSocket';
 import styled from 'styled-components'
 
-const ARROW_UP_BTN = styled.button`
+const ARROW_UP_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) rotate(270deg);
   left:50%;
   top:25%;
   border : 0;
+  width: 100px;
 `
 
-const ARROW_LEFT_BTN = styled.button`
+const ARROW_LEFT_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) rotate(180deg);
   left:20%;
   top:40%;
   border : 0;
+  width: 100px;
 `
 
-const ARROW_RIGHT_BTN = styled.button`
+const ARROW_RIGHT_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) rotate(0deg);
   left:80%;
   top:40%;
   border : 0;
+  width: 100px;
 `
 
-const ARROW_DOWN_BTN = styled.button`
+const ARROW_DOWN_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) rotate(90deg);
   left:50%;
   top:55%;
   border : 0;
+  width: 100px;
 `
 
-const ARROW_CENTOR_BTN = styled.button`
+const ARROW_CENTOR_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) rotate(90deg);
   left:50%;
   top:40%;
   border : 0;
-`
-
-const ARROW_IMG = styled.img`
   width: 100px;
-  `
+`
 
 const JOYSTICK_ON = styled.img`
   width: 50px;
@@ -203,11 +204,11 @@ function GameControlModal({history})
           <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
           {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
         </HEADER>
-        <ARROW_UP_BTN onClick={() => onClickedRemoteCommand('UP')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_UP_BTN>
-        <ARROW_DOWN_BTN onClick={() => onClickedRemoteCommand('DOWN')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_DOWN_BTN>
-        <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_LEFT_BTN>
-        <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')}><ARROW_IMG src="Remote/Btn_Arrow.PNG"/></ARROW_RIGHT_BTN>
-        <ARROW_CENTOR_BTN onClick={() => onClickedRemoteCommand('RETURN')}><ARROW_IMG src="Remote/Btn_Center.PNG"/></ARROW_CENTOR_BTN>
+        <ARROW_UP_BTN onClick={() => onClickedRemoteCommand('UP')} src="Remote/Btn_Arrow.PNG"/>
+        <ARROW_DOWN_BTN onClick={() => onClickedRemoteCommand('DOWN')} src="Remote/Btn_Arrow.PNG"/>
+        <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')} src="Remote/Btn_Arrow.PNG"/>
+        <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')} src="Remote/Btn_Arrow.PNG"/>
+        <ARROW_CENTOR_BTN onClick={() => onClickedRemoteCommand('RETURN')} src="Remote/Btn_Center.PNG"/>
         <HOME_BUTTON onClick={() => onClickedRemoteCommand('HOME')}>Home</HOME_BUTTON>
       </MAIN_BACKGROUND>
       
