@@ -15,12 +15,12 @@ function Super_Admin_Login() {
     width: 150px;
     position: absolute; 
     left: 50%; transform: translateX(-50%);
-    top: 5%
+    top: 5%;
     `
     const MAIN_BACKGROUND = styled.div`
     background-Color: gray;
     height: 100vh;
-    display: flex
+    display: flex;
     `
   
     const FORM = styled.div`
@@ -41,8 +41,10 @@ function Super_Admin_Login() {
       height: 3vh;  
       @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
       font-family: 'Nanum Gothic', sans-serif;
-      width: 80%;
+      width: 150px;
       background-Color: white;
+      border-radius: 5px;
+      border: 0px;
     `
   
     const ACCOUNT_LABEL = styled.label`

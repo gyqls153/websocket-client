@@ -142,12 +142,12 @@ function Super_Admin_CreateAccount(props) {
   width: 100px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 2%
+  top: 2%;
   `
   const MAIN_BACKGROUND = styled.div`
   background-Color: gray;
   height: 100vh;
-  display: flex
+  display: flex;
   `
 
   const FORM = styled.div`
@@ -171,6 +171,8 @@ function Super_Admin_CreateAccount(props) {
     font-family: 'Nanum Gothic', sans-serif;
     width: 80%;
     background-Color: white;
+    border: 0px;
+    border-radius: 5px;
   `
 
   const ACCOUNT_LABEL = styled.label`

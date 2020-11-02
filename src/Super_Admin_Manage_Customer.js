@@ -9,7 +9,7 @@ const TemplateStyle = styled.div`
     border-radius: 15px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between 
+    justify-content: space-between; 
 `;
 
 const IconeButton = styled.img`

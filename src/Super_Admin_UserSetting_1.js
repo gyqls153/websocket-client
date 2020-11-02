@@ -1,6 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useEnableGameDic, useSelectedLoginId, useSerialInfoList, useSetSerialInfoList } from './AppContextProvider';
+import styled from 'styled-components'
+
+const di = styled.div`
+background-color : red;
+`;
 
 function Super_Admin_UserSetting_1(props)
 {
@@ -52,6 +57,7 @@ function Super_Admin_UserSetting_1(props)
     return (
         <>
             <div>
+                <di></di>
                 <button onClick= {createSerial}>시리얼 생성</button>
                 <button onClick= {onClick_UpdateSerialSlot}>등록완료</button>
             </div>

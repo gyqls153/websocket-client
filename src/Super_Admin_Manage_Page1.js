@@ -13,7 +13,7 @@ const LOGO = styled.img`
 width: 100px;
 position: absolute; 
 left: 50%; transform: translateX(-50%);
-top: 2%
+top: 2%;
 `
 
 const NANUM_GOTHIC = styled.p`

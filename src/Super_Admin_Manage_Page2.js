@@ -12,7 +12,7 @@ const LOGO = styled.img`
 width: 100px;
 position: absolute; 
 left: 50%; transform: translateX(-50%);
-top: 2%
+top: 2%;
 `
 
 const NANUM_GOTHIC = styled.p`
@@ -32,6 +32,8 @@ const INPUT = styled.input`
     background-Color: white;
     padding: 0px;
     margin-left: 25%;
+    border: 0px;
+    border-radius: 5px;
     `
 
 const MAINBACKGROUND = styled.div`
