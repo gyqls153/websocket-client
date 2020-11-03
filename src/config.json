@@ -5,7 +5,7 @@
     "develop" : {
         "addressIp" : "13.209.190.34:4000"
     },
-    "ENV": "local"
+    "ENV": "develop"
     ,
     "Super_Admin_ID" : "happySketch",
     "Super_Admin_Password" : "qwe123!@#"
