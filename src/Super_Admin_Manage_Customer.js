@@ -50,7 +50,7 @@ function Super_Admin_Manage_Customer(props) {
         <TemplateStyle onClick={() => props.onClick(props.id)}>  
             <IconeButton src="Common/List_icon1.png"></IconeButton>
             <TextWrap>{props.customerName}</TextWrap>
-            <RemoveButton onClick={() => onRemoveButtonClick(props.id)} src="Common/Remove_Button.png"></RemoveButton>
+            <RemoveButton onClick={(e) => {onRemoveButtonClick(props.id); e.stopPropagation();}} src="Common/Remove_Button.png"></RemoveButton>
         </TemplateStyle>
     );
 }
