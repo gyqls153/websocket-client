@@ -19,6 +19,7 @@ import Super_Admin_Manage_Page1 from './Super_Admin_Manage_Page1';
 import Super_Admin_Manage_Page2 from './Super_Admin_Manage_Page2';
 import Super_Admin_Manage_Page3 from './Super_Admin_Manage_Page3';
 import Admin_Setting_Selected_Device from './Admin_Setting_Selected_Device'
+import Admin_Setting_Game_Selection from './Admin_Setting_Game_Selection'
 
 axios.defaults.baseURL = `http://${config[config.ENV].addressIp}`;
 
@@ -31,6 +32,7 @@ function App() {
               <Route path ='/admin_setting' component={Admin_Setting}></Route>
               <Route path ='/admin_setting_new' component={Admin_Setting_New}></Route>
               <Route path ='/admin_setting_selected_device' component={Admin_Setting_Selected_Device}></Route>
+              <Route path ='/admin_setting_game_selection' component={Admin_Setting_Game_Selection}></Route>
               <Route path ='/super_admin_create_account' component={Super_Admin_CreateAccount}></Route>
               <Route path ='/super_admin_userSetting' component={Super_Admin_UserSetting_Main}></Route>
               <Route path ='/game_controll_modal' component={GameControllModal}></Route>

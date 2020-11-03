@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import React, {useState, useEffect} from 'react';
 import Super_Admin_Manage_Customer2 from './Super_Admin_Manage_Customer2';
 import axios from 'axios';
-import { useAdminLoginId, useEnableGameDic, useSelectedSerial, useSetSelectedSerial } from './AppContextProvider';
+import { useAdminLoginId } from './AppContextProvider';
 import { useCurrentCustomer, useSetCurrentCustomer } from './AppContextProvider'
 
 
