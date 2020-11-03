@@ -4,6 +4,16 @@ import React, {useEffect, useState} from 'react';
 import Super_Admin_Manage_Customer from './Super_Admin_Manage_Customer';
 import axios from 'axios';
 
+import AppContextProvider, {
+  useAdminInfo_List,
+  useName,
+  useAddAdminInfo,
+  useSetSelectedLoginId,
+  useSetSerialInfoList,
+  useSetEnableGameDic,
+  useSetAdminLoginId,
+} from './AppContextProvider';
+
 const HEADER = styled.div`
     background-color: red;
     height: 70px;
@@ -66,9 +76,19 @@ function Super_Admin_Manage_Page1(props) {
 
 }, []);
 
+  let setSelectedLoginId = useSetSelectedLoginId();
+  function Clicked_Customer(id) {
+    console.log(id);
+    setTimeout(() => {
+      setSelectedLoginId(id);
+  
+      props.history.push("super_admin_manage_page3");
+      
+    }, 0);
+  }
 
     const fruitsList = adminInfoList.map(
-    (data) => (<Super_Admin_Manage_Customer key={data.name} customerName={data.name} removeFunc={() => removeAdminUser(data.id)}></Super_Admin_Manage_Customer>)
+    (data) => (<Super_Admin_Manage_Customer onClick={() => Clicked_Customer(data.loginId) } key={data.name} customerName={data.name} removeFunc={() => removeAdminUser(data.id)}></Super_Admin_Manage_Customer>)
     );
 
     return(

@@ -6,4 +6,7 @@
         "addressIp" : "13.209.190.34:4000"
     },
     "ENV": "local"
+    ,
+    "Super_Admin_ID" : "happySketch",
+    "Super_Admin_Password" : "qwe123!@#"
 }

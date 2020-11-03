@@ -1,8 +1,9 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import config from './config.json'
 
-function Super_Admin_Login() {
+function Super_Admin_Login(props) {
 
 
     const NANUM_GOTHIC = styled.p`
@@ -68,6 +69,26 @@ function Super_Admin_Login() {
       color: white;
       font-weight: bold;
     `
+
+    function LoginClick() {
+        const id = document.getElementById("id");
+        const password = document.getElementById("password");
+
+        console.log(id.value);
+
+        if (config.Super_Admin_ID === id.value){
+          if (config.Super_Admin_Password === password.value)
+          {
+              props.history.push("super_admin_manage_page1");
+          }
+          else {
+            alert("12");
+          }
+        }
+        else{
+          alert("2");
+        }
+    }
   
     return (
       <MAIN_BACKGROUND>
@@ -76,7 +97,7 @@ function Super_Admin_Login() {
         <LOGO src="Super_Admin/Login_Logo.png"></LOGO>
         <INPUT type="text" placeholder="ID" id="id"></INPUT>
         <INPUT type="password" placeholder="Password" id="password"></INPUT>
-        <BUTTON>등록</BUTTON>
+        <BUTTON onClick={() => LoginClick()}>Login</BUTTON>
       </FORM>
       </MAIN_BACKGROUND>
     );
