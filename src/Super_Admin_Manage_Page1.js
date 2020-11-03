@@ -48,16 +48,12 @@ function Super_Admin_Manage_Page1(props) {
 
     const [adminInfoList, setAdminInfoList] = useState([]);
 
-     function func() {
-      
-      alert("func")
-      axios.post('/admin_user_info_all', {}).then(function (response) {
+    async function func() {
+      await axios.post('/admin_user_info_all', {}).then(function (response) {
           console.log(response.data);
           setAdminInfoList(response.data);
-          alert(response.data)
     }).catch(function (error) {
       console.log(error);
-      alert(error)
     });
   }
 
