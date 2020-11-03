@@ -30,7 +30,7 @@ const NANUM_GOTHIC = styled.p`
 
 const INPUT = styled.input`
     margin-bottom: 10px;
-    height: 3vh;  
+    height: 30px;  
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     width: 50%;

@@ -98,7 +98,7 @@ function Admin_Main(props) {
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  width: 30vh;
+  width: 30vw;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -106,7 +106,7 @@ function Admin_Main(props) {
 
   const INPUT = styled.input`
     margin-bottom: 10px;
-    height: 3vh;
+    height: 30px;
     margin-left: 10px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
