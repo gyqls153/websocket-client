@@ -43,7 +43,7 @@ const INPUT = styled.input`
 
 const MAINBACKGROUND = styled.div`
     background-color: gray;
-    height: 100vh;
+    height: 100%;
 `;
 
 const BUTTON = styled.button`
