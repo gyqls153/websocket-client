@@ -145,15 +145,10 @@ function Super_Admin_CreateAccount(props) {
   top: 10px;
   `
   const MAIN_BACKGROUND = styled.div`
-  background-Color: gray;
-  height: 100vh;
-  display: flex;
   `
 
 
   const FORM = styled.div`
-  background-Color: gray;
-  height: 100vw;
   position: absolute; 
   top: 150px;
   left: 50%;

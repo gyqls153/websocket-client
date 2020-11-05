@@ -20,12 +20,12 @@ const HEADER = styled.div`
     height: 70px;
 `;
 
-const LOGO = styled.img`
-width: 100px;
-position: absolute; 
-left: 50%; transform: translateX(-50%);
-top: 2%;
-`
+  const LOGO = styled.img`
+  width: 100px;
+  position: absolute; 
+  left: 50%; transform: translateX(-50%);
+  top: 10px;
+  `
 
 const NANUM_GOTHIC = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -36,8 +36,6 @@ const NANUM_GOTHIC = styled.p`
     `
 
 const MAINBACKGROUND = styled.div`
-    background-color: gray;
-    height: 100vh;
 `;
 
   const ADDBUTTON = styled.img`

@@ -16,6 +16,7 @@ const AppContextProvider = ({children}) => {
     const [enableGameDic, set_enableGameDic] = useState({});
     const [serialInfoList, setSerialInfoList] = useState([]);
     const [currentSerial, set_currentSerial] = useState(0);
+    const [currentSerialName, set_currentSerialName] = useState(0);
     
     const [currentCustomer, set_currentCustomer] = useState("");
     
@@ -38,7 +39,10 @@ const AppContextProvider = ({children}) => {
             set_currentSerial,
 
             currentCustomer,
-            set_currentCustomer
+            set_currentCustomer,
+
+            currentSerialName,
+            set_currentSerialName
         }
     }>{children}</AppContext.Provider>
 };
@@ -108,5 +112,15 @@ export const useSelectedSerial = () => {
 export const useSetSelectedSerial = () => {
     const {set_currentSerial} = useContext(AppContext);
     return set_currentSerial;
+}
+
+export const useSelectedSerialName = () => {
+    const {currentSerialName} = useContext(AppContext);
+    return currentSerialName;
+}
+
+export const useSetSelectedSerialName = () => {
+    const {set_currentSerialName} = useContext(AppContext);
+    return set_currentSerialName;
 }
 

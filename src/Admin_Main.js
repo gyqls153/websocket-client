@@ -30,8 +30,8 @@ function Admin_Main(props) {
   const setAdminLoginId = useSetAdminLoginId();
 
   function joinAdminUser() {
-    const id = document.getElementById('id').value;
-    const password = document.getElementById('Password').value;
+    const id = document.getElementById('_id').value;
+    const password = document.getElementById('_Password').value;
 
     axios
       .post('/admin_login', {
@@ -42,7 +42,7 @@ function Admin_Main(props) {
         if (response.data.isSuccess) {
           setAdminLoginId(id);
           // 로그인
-          props.history.push('/admin_setting');
+          props.history.push('/admin_setting_new');
         } else {
           alert(response.data.errorMsg);
         }
@@ -140,8 +140,8 @@ function Admin_Main(props) {
     <LOGO src="Remote/Logo_Spark.png"></LOGO>
     <FORM>
       <ACCOUNT_LABEL><NANUM_GOTHIC>Sign In</NANUM_GOTHIC></ACCOUNT_LABEL>
-      <INPUT type="text" placeholder="ID" id="id"></INPUT>
-      <INPUT type="password" placeholder="Password" id="Password"></INPUT>
+      <INPUT type="text" placeholder="ID" id="_id"></INPUT>
+      <INPUT type="password" placeholder="Password" id="_Password"></INPUT>
       <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </FORM>
     </MAIN_BACKGROUND>

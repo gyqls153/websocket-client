@@ -45,8 +45,6 @@ const INPUT = styled.input`
     `
 
 const MAINBACKGROUND = styled.div`
-    background-color: gray;
-    height: 100vh;
 `;
 
 const MAINGAP = styled.div`

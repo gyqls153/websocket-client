@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
+import { useSelectedSerial, useSelectedSerialName } from './AppContextProvider';
 
 function Admin_Setting_Selected_Device(props)
 {
@@ -14,7 +15,7 @@ function Admin_Setting_Selected_Device(props)
     color: white;
     text-align: center;
     margin: 0px;
-    padding-top: 150px;
+    padding-top: 80px;
     `
 
     const NANUM_GOTHIC_2 = styled.p`
@@ -51,30 +52,45 @@ function Admin_Setting_Selected_Device(props)
     `
 
     const CONTROLL_WRAP = styled.div`
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
     `;
 
-const MAIN_BACKGROUND = styled.div`
-background-color: #D5D5D5;
-height: 100vh;
-`
+    const MAIN_BACKGROUND = styled.div`
+    `
+
+    const BACKBUTTON = styled.img`
+    width: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    `
+
+    const goToGameSelection = () => {
+        props.history.push("admin_setting_game_selection");
+    }
+
+    const goToGameControll = () => {
+        props.history.push("game_controll_modal");
+    }
+
+    const selectedSerial = useSelectedSerial();
+    const selectedSerialName = useSelectedSerialName();
 
     return (
         <>
             <HEADER>
+                <BACKBUTTON onClick={() => props.history.goBack()} src="Remote/Btn_BackArrow.PNG"></BACKBUTTON>
                 <LOGO src="Admin/Login_Logo.png"></LOGO>
-                <NANUM_GOTHIC_1>Spark 02</NANUM_GOTHIC_1>
-                <NANUM_GOTHIC_2>dsfsddfsd-dfdsfds-dsfdsfs-fdsfds</NANUM_GOTHIC_2>
+                <NANUM_GOTHIC_1>{selectedSerialName}</NANUM_GOTHIC_1>
+                <NANUM_GOTHIC_2>{selectedSerial}</NANUM_GOTHIC_2>
             </HEADER>
             <MAIN_BACKGROUND>
                 <div>
                  <NANUM_GOTHIC_3>Content With</NANUM_GOTHIC_3>
                 </div>
                 <CONTROLL_WRAP>
-                    <GAME_SELECTION src="Remote/Btn_Menu.PNG"></GAME_SELECTION>
-                    <GAME_CONTROLL src="Remote/Btn_Control.PNG"></GAME_CONTROLL>
+                    <GAME_SELECTION onClick={() => goToGameSelection()} src="Remote/Btn_Menu.PNG"></GAME_SELECTION>
+                    <GAME_CONTROLL onClick={() => goToGameControll()} src="Remote/Btn_Control.PNG"></GAME_CONTROLL>
                 </CONTROLL_WRAP>
             </MAIN_BACKGROUND>
         </>

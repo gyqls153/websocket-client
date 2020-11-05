@@ -9,17 +9,24 @@ function Admin_Setting_Game_Selection(props)
     const NANUM_GOTHIC_1 = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    color: black;
-    text-align: center;
-    margin: 0px;
+    color: white;
+    display: inline;
+    margin-left: 40%;
     `
 
     const NANUM_GOTHIC_2 = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    color: white;
+    color: black;
     text-align: center;
     margin: 0px;
+    `
+
+    const BACKBUTTON = styled.img`
+    width: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline;
     `
    
    const NANUM_GOTHIC_3 = styled.p`
@@ -224,6 +231,7 @@ function Admin_Setting_Game_Selection(props)
     return (
     <MAIN_DIV>
     <HEADER>
+        <BACKBUTTON onClick={() => props.history.goBack()} src="Remote/Btn_BackArrow.PNG"></BACKBUTTON>
         <NANUM_GOTHIC_1>Game Selection</NANUM_GOTHIC_1>
     </HEADER>
     <MAIN_BACKGROUND>
@@ -232,7 +240,7 @@ function Admin_Setting_Game_Selection(props)
           // changeItem(index) 을 onClick에 그대로 받으면
           // 함수가 즉시 실행되기 때문에
           // 익명 함수로 changeItem(index)를 전달한다
-          <BUTTON key={index} onClick={() => changeItem(index)}><NANUM_GOTHIC_1>{section.tab}</NANUM_GOTHIC_1></BUTTON>
+          <BUTTON key={index} onClick={() => changeItem(index)}><NANUM_GOTHIC_2>{section.tab}</NANUM_GOTHIC_2></BUTTON>
         ))}
     </CATEGORY_BUTTONS>
         {/* contentAPI 배열의 currentItem 번째의 content 내용이 찍힌다 */}

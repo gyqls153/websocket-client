@@ -100,17 +100,11 @@ margin-left: 30px;
 `
 
 const MAIN_BACKGROUND = styled.div`
-background-color: #D5D5D5;
-height: 100vh;
 display: flex;
 `
 
-function GameControlModal({history})
+function GameControlModal(props)
 {
-    console.log("GameControlModal");
-
-    let [isOn, setOnOff] = useState(false);
-    
     const send = (message, callback) => {
       waitForConnection(function () {
           ws.send(message);
@@ -200,7 +194,7 @@ function GameControlModal({history})
     return (
       <MAIN_BACKGROUND>
         <HEADER>
-          <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" onClick={() => onClickedRemoteCommand('BACK')}></BACK_BUTTON>
+          <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" onClick={() => props.history.goBack()}></BACK_BUTTON>
           <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
           {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
         </HEADER>

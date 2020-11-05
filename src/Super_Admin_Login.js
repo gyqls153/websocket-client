@@ -19,8 +19,6 @@ function Super_Admin_Login(props) {
     top: 5%;
     `
     const MAIN_BACKGROUND = styled.div`
-    background-Color: gray;
-    height: 100vh;
     display: flex;
     `
   
