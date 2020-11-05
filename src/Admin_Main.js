@@ -83,7 +83,7 @@ function Admin_Main(props) {
   width: 150px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 5%;
+  top: 50px;
   `
   const MAIN_BACKGROUND = styled.div`
   background-Color: black;
@@ -98,7 +98,7 @@ function Admin_Main(props) {
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  width: 30vw;
+  width: 60vw;
   display: flex;
   align-items: center;
   flex-direction: column;
