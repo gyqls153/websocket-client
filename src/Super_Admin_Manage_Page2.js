@@ -49,7 +49,7 @@ const BUTTON = styled.button`
     bottom:10px;
     left: 25%;
     width: 50%;
-    height: 6vh;
+    height: 60px;
     background-Color: red;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);

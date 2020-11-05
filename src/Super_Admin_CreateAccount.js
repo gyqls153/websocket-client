@@ -177,10 +177,8 @@ function Super_Admin_CreateAccount(props) {
   `
 
   const BUTTON = styled.button`
-    position:absolute; 
-    bottom:0px;
     width: 100%;
-    height: 7vh;
+    height: 70px;
     background-Color: red;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
