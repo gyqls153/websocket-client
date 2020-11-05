@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import React, {useState, useEffect} from 'react';
 import Super_Admin_Manage_Customer2 from './Super_Admin_Manage_Customer2';
 import axios from 'axios';
-import { useAdminLoginId } from './AppContextProvider';
+import { useAdminLoginId, useSelectedLoginId } from './AppContextProvider';
 import { useCurrentCustomer, useSetCurrentCustomer } from './AppContextProvider'
 
 
@@ -46,7 +46,7 @@ const INPUT = styled.input`
 
 const MAINBACKGROUND = styled.div`
     background-color: gray;
-    height: 100%;
+    height: 100vh;
 `;
 
 const MAINGAP = styled.div`
@@ -75,20 +75,21 @@ const BUTTON = styled.button`
 `;
 
 function Super_Admin_Manage_Page3(props) {
-    
-    async function removeSerial(id) {
-        console.log("removeSerial")
+    const [serials, setSerials] = useState([]);
+    const loginId = useSelectedLoginId();
 
-    await axios.post('/remove_admin_user', {
-        id
+    async function removeSerial(id) {
+        console.log(id)
+
+    await axios.post('/RemoveSerial', {
+        Serial:id,
+        loginId : loginId
     }).then(function (response) {
+        setSerials(response.data);
     }).catch(function (error) {
     console.log(error);
     });
     }
-
-    const [serials, setSerials] = useState([]);
-    const loginId = useAdminLoginId();
 
     async function func() {
         await axios.post('/serial_list', { loginId }).then(function (response) {
@@ -114,22 +115,20 @@ function Super_Admin_Manage_Page3(props) {
     const dataName = "Spark " + zeroPad(idx,2);
     console.log(dataName);
 
-    return <Super_Admin_Manage_Customer2 key = {data} customerName={dataName} serial={data} removeFunc={() => removeSerial(data.id)}></Super_Admin_Manage_Customer2>
+    return <Super_Admin_Manage_Customer2 key = {data} customerName={dataName} serial={data} removeFunc={() => removeSerial(data)}></Super_Admin_Manage_Customer2>
     }
     );
 
       // 시리얼 생성
     function createSerial()
     {
-        axios.post('/createSerial')
+        axios.post('/createSerial', {loginId})
         .then(function (response) { 
             setSerials([...serials, response.data.value]);
         })
         .catch(function (error) { });
     }
 
-    const setCurrentCustomer = useSetCurrentCustomer();
-    setCurrentCustomer("안동초등학교");
     const currentCustomer = useCurrentCustomer();
 
     function addSerial(id) {

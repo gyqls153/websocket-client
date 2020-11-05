@@ -142,7 +142,7 @@ function Super_Admin_CreateAccount(props) {
   width: 100px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 2%;
+  top: 10px;
   `
   const MAIN_BACKGROUND = styled.div`
   background-Color: gray;
@@ -150,14 +150,15 @@ function Super_Admin_CreateAccount(props) {
   display: flex;
   `
 
+
   const FORM = styled.div`
   background-Color: gray;
-  height: 50vh;
+  height: 100vw;
   position: absolute; 
-  top: 20%;
+  top: 150px;
   left: 50%;
   transform: translateX(-50%);
-  width: 30vh;
+  width: 50vw;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -165,7 +166,7 @@ function Super_Admin_CreateAccount(props) {
 
   const INPUT = styled.input`
     margin-bottom: 10px;
-    height: 3vh;
+    height: 30px;
     margin-left: 10px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;

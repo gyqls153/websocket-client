@@ -26,12 +26,12 @@ function Super_Admin_Login(props) {
   
     const FORM = styled.div`
     background-Color: white;
-    height: 50vh;
+    height: 100vw;
     position: absolute; 
-    top: 20%;
+    top: 150px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30vh;
+    width: 70vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -58,7 +58,7 @@ function Super_Admin_Login(props) {
       position:absolute; 
       bottom:10px;
       width: 80%;
-      height: 7vh;
+      height: 50px;
       padding-left: 30px;
       padding-right: 30px;
       background-Color: red;

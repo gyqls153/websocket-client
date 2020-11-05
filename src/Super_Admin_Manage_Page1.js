@@ -12,6 +12,7 @@ import AppContextProvider, {
   useSetSerialInfoList,
   useSetEnableGameDic,
   useSetAdminLoginId,
+  useSetCurrentCustomer,
 } from './AppContextProvider';
 
 const HEADER = styled.div`
@@ -76,15 +77,17 @@ function Super_Admin_Manage_Page1(props) {
 
 }, []);
 
+
+const setCurrentCustomer = useSetCurrentCustomer();
   let setSelectedLoginId = useSetSelectedLoginId();
-  function Clicked_Customer(id) {
-    console.log(id);
-    setTimeout(() => {
-      setSelectedLoginId(id);
   
+  async function Clicked_Customer(id) {
+    setSelectedLoginId(id);
+    await axios.post('/get_admin_Info', { loginId:id }).then(function (response) {
+      console.log(response.data);
+      setCurrentCustomer(response.data.name);
       props.history.push("super_admin_manage_page3");
-      
-    }, 0);
+    })
   }
 
     const fruitsList = adminInfoList.map(
