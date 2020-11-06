@@ -47,7 +47,7 @@ const TextWrap = styled.div`
 `;
 
 const Line = styled.hr`
-    width: 500px;
+    width: 100vw;
 `;
 
 function Super_Admin_Manage_Customer3(props) {

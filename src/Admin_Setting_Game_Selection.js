@@ -9,23 +9,18 @@ function Admin_Setting_Game_Selection(props)
     const BACK_BUTTON = styled.img`
     width: 20px;
     height: 30px;
-    margin-left: 10px;
-    `
-    const NANUM_GOTHIC = styled.p`
-    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-    font-family: 'Nanum Gothic', sans-serif;
-    color: white;
-    display: inline;
-    
-    margin-left: 18vh;
+    position: absolute;
+    top: 25%;
     `
 
-    const NANUM_GOTHIC_1 = styled.p`
+    const NANUM_GOTHIC = styled.span`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     color: white;
-    display: inline;
-    margin-left: 40%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform:translateX(-50%);
     `
 
     const NANUM_GOTHIC_2 = styled.p`
@@ -55,21 +50,26 @@ function Admin_Setting_Game_Selection(props)
     width: 100%;
     height: 80px;
     background-color: black;
-    display: flex;
-    align-items: center;
+    position: relative;
     `
 
     const MAIN_BACKGROUND = styled.div`
-    background-color: white;
-    height: 100vh;
     `
 
     const BUTTON = styled.button`
         background-color: white;
-        border: 1px solid;
-        height: 30px;
+        border: 0px solid;
+        height: 50px;
         width: 25%;
+        position: relative;
     `
+
+    const LINE = styled.hr`
+    width: 100%;    
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    `;
 
     const MAIN_DIV = styled.div`
     display: flex;
@@ -218,7 +218,8 @@ function Admin_Setting_Game_Selection(props)
         const [currentIndex, setCurrentIndex] = useState(initialTab);
         return {
           currentItem: allTabs[currentIndex],
-          changeItem: setCurrentIndex
+          changeItem: setCurrentIndex,
+          currentIndex
         };
       };
       
@@ -244,7 +245,7 @@ function Admin_Setting_Game_Selection(props)
             });
       },[])
 
-    const { currentItem, changeItem } = useTab(0, contentAPI);
+    const { currentItem, changeItem, currentIndex } = useTab(0, contentAPI);
     return (
     <MAIN_DIV>
     <HEADER>
@@ -253,12 +254,14 @@ function Admin_Setting_Game_Selection(props)
         </HEADER>
     <MAIN_BACKGROUND>
     <CATEGORY_BUTTONS>
-        {contentAPI.map((section, index) => (
+        {contentAPI.map((section, index) => {
           // changeItem(index) 을 onClick에 그대로 받으면
           // 함수가 즉시 실행되기 때문에
           // 익명 함수로 changeItem(index)를 전달한다
-          <BUTTON key={index} onClick={() => changeItem(index)}><NANUM_GOTHIC_2>{section.tab}</NANUM_GOTHIC_2></BUTTON>
-        ))}
+        let result = <BUTTON key={index} onClick={() => changeItem(index)}><NANUM_GOTHIC_2>{section.tab}</NANUM_GOTHIC_2>{currentIndex === index ? <LINE></LINE> : <></>}</BUTTON>;
+
+          return result;
+        })}
     </CATEGORY_BUTTONS>
         {/* contentAPI 배열의 currentItem 번째의 content 내용이 찍힌다 */}
         <div>{currentItem.content}</div>

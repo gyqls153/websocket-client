@@ -3,12 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TemplateStyle = styled.div`
-    background-color: white;
-    margin-left: 5%;
-    margin-right: 5%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid;
 `;
 
 const IconeButton = styled.img`
@@ -39,7 +35,7 @@ const TextMain2 = styled.p`
     margin-bottom: 0px;
     color: gray;
     
-    margin-left: 10px;
+    margin-left: 0px;
 `;
 
 const TextWrap = styled.div`
@@ -50,19 +46,26 @@ const TextWrap = styled.div`
 `;
 
 const Mini_TemplateStyle = styled.div`
-    background-color: white;
     display: flex;
+`;
+
+
+const Line = styled.hr`
+    width: 100vw;
 `;
 
 function Admin_Game_Box(props) {
     console.log(props.Icon);
     return(
+        <>
         <TemplateStyle>  
             <Mini_TemplateStyle><IconeButton src={"Icon_Con00/"+ props.Icon}></IconeButton>
             <TextWrap><TextMain>{props.Title}</TextMain><TextMain2>{props.Desc}</TextMain2></TextWrap>
             </Mini_TemplateStyle>
             <ToggleButton onClick={() => props.SetEnable()} src={props.Enable ? "Remote/Btn_On.PNG" : "Remote/Btn_Off.PNG"}></ToggleButton>
         </TemplateStyle>
+        <Line></Line>
+        </>
     );
 }
 
