@@ -30,10 +30,11 @@ function Admin_Setting_Selected_Device(props)
     const NANUM_GOTHIC_3 = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
+    font-size: 30px;    
     color: black;
     text-align: center;
     margin: 0px;
-    padding-top: 0px;
+    padding-top: 40px;
     `
 
     const LOGO = styled.img`
@@ -44,6 +45,7 @@ function Admin_Setting_Selected_Device(props)
     `
 
     const GAME_SELECTION = styled.img`
+    margin-right: 20px;
     width: 150px;
     `
 
@@ -54,6 +56,7 @@ function Admin_Setting_Selected_Device(props)
     const CONTROLL_WRAP = styled.div`
         display: flex;
         justify-content: center;
+        margin-top: 100px;
     `;
 
     const MAIN_BACKGROUND = styled.div`

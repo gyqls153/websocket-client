@@ -131,13 +131,16 @@ function Super_Admin_CreateAccount(props) {
   }));
   const classes = useStyles();
 
-
   const NANUM_GOTHIC = styled.p`
   @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
   font-family: 'Nanum Gothic', sans-serif;
   color: black;
+  text-align: center;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
   `
-
   const LOGO = styled.img`
   width: 100px;
   position: absolute; 
@@ -150,10 +153,8 @@ function Super_Admin_CreateAccount(props) {
 
   const FORM = styled.div`
   position: absolute; 
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50vw;
+  left: 50%; transform: translateX(-50%);
+  width: 80vw;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -172,12 +173,12 @@ function Super_Admin_CreateAccount(props) {
   `
 
   const ACCOUNT_LABEL = styled.label`
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 30px;
   `
 
   const BUTTON = styled.button`
-    width: 100%;
+    width: 80%;
     height: 70px;
     background-Color: red;
     border: 0;
@@ -186,6 +187,7 @@ function Super_Admin_CreateAccount(props) {
     font-size: 20px;
     color: white;
     font-weight: bold;
+    margin-top: 100px;
   `
   
   const HEADER = styled.div`

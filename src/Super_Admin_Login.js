@@ -40,14 +40,15 @@ function Super_Admin_Login(props) {
       height: 30px;  
       @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
       font-family: 'Nanum Gothic', sans-serif;
-      width: 150px;
+      width: 200px;
       background-Color: white;
       border-radius: 5px;
-      border: 0px;
+      border: 1px solid;
+      border-color: #000000;
     `
   
     const ACCOUNT_LABEL = styled.label`
-      margin-top: 80px;
+      margin-top: 100px;
       margin-bottom: 30px;
       display: block;
     `

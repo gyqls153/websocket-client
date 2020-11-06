@@ -6,6 +6,20 @@ import Admin_Game_Box from './Admin_Game_Box';
 
 function Admin_Setting_Game_Selection(props)
 {
+    const BACK_BUTTON = styled.img`
+    width: 20px;
+    height: 30px;
+    margin-left: 10px;
+    `
+    const NANUM_GOTHIC = styled.p`
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    color: white;
+    display: inline;
+    
+    margin-left: 18vh;
+    `
+
     const NANUM_GOTHIC_1 = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
@@ -38,8 +52,11 @@ function Admin_Setting_Game_Selection(props)
     `
 
     const HEADER = styled.div`
+    width: 100%;
+    height: 80px;
     background-color: black;
-    height: 100px;
+    display: flex;
+    align-items: center;
     `
 
     const MAIN_BACKGROUND = styled.div`
@@ -231,9 +248,9 @@ function Admin_Setting_Game_Selection(props)
     return (
     <MAIN_DIV>
     <HEADER>
-        <BACKBUTTON onClick={() => props.history.goBack()} src="Remote/Btn_BackArrow.PNG"></BACKBUTTON>
-        <NANUM_GOTHIC_1>Game Selection</NANUM_GOTHIC_1>
-    </HEADER>
+          <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" onClick={() => props.history.goBack()}></BACK_BUTTON>
+          <NANUM_GOTHIC>Game Selection</NANUM_GOTHIC>
+        </HEADER>
     <MAIN_BACKGROUND>
     <CATEGORY_BUTTONS>
         {contentAPI.map((section, index) => (

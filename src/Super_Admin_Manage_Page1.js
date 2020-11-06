@@ -33,14 +33,18 @@ const NANUM_GOTHIC = styled.p`
     color: black;
     text-align: center;
     margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
     `
 
 const MAINBACKGROUND = styled.div`
 `;
 
   const ADDBUTTON = styled.img`
-    margin-left: 40%;
-    width: 20%;
+    margin-left: 35%;
+    width: 30%;
+    margin-bottom: 20px;
 `;
 
 function Super_Admin_Manage_Page1(props) {
@@ -98,6 +102,8 @@ const setCurrentCustomer = useSetCurrentCustomer();
                 <LOGO src="Super_Admin/Login_Logo.png"></LOGO>
             </HEADER>
             <MAINBACKGROUND>
+
+            <NANUM_GOTHIC>Registration information</NANUM_GOTHIC>
             <ADDBUTTON onClick={() => {props.history.push("super_admin_create_account")}} src="Common/Add_Button.png"></ADDBUTTON>
               {fruitsList}                
             </MAINBACKGROUND>

@@ -80,10 +80,10 @@ function Admin_Main(props) {
   `
 
   const LOGO = styled.img`
-  width: 150px;
+  width: 200px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 50px;
+  top: 100px;
   `
   const MAIN_BACKGROUND = styled.div`
   background-Color: black;
@@ -92,10 +92,9 @@ function Admin_Main(props) {
   `
 
   const FORM = styled.div`
-  background-Color: black;
-  height: 50vh;
+  height: 500px;
   position: absolute; 
-  top: 20%;
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
   width: 60vw;
@@ -105,16 +104,29 @@ function Admin_Main(props) {
   `
 
   const INPUT = styled.input`
-    margin-bottom: 10px;
     height: 30px;
     margin-left: 10px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    width: 80%;
+    width: 100%;
     background-Color: white;
     border-radius: 5px;
     border: 0px;
+    margin-top: 100px;
   `
+
+  const INPUT2 = styled.input`
+  height: 30px;
+  margin-left: 10px;
+  @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+  font-family: 'Nanum Gothic', sans-serif;
+  width: 100%;
+  background-Color: white;
+  border-radius: 5px;
+  border: 0px;
+  margin-top: 10px;
+  `
+
 
   const ACCOUNT_LABEL = styled.label`
     margin-top: 30px;
@@ -123,9 +135,9 @@ function Admin_Main(props) {
 
   const BUTTON = styled.button`
     position:absolute; 
-    bottom:0px;
+    bottom:100px;
     width: 100%;
-    height: 7vh;
+    height: 50px;
     background-Color: red;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -137,11 +149,10 @@ function Admin_Main(props) {
 
   return (
     <MAIN_BACKGROUND>
-    <LOGO src="Remote/Logo_Spark.png"></LOGO>
+    <LOGO src="Admin/Login_Logo.png"></LOGO>
     <FORM>
-      <ACCOUNT_LABEL><NANUM_GOTHIC>Sign In</NANUM_GOTHIC></ACCOUNT_LABEL>
       <INPUT type="text" placeholder="ID" id="_id"></INPUT>
-      <INPUT type="password" placeholder="Password" id="_Password"></INPUT>
+      <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
       <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </FORM>
     </MAIN_BACKGROUND>

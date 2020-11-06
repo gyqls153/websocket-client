@@ -67,11 +67,19 @@ function Admin_Setting_New(props)
     const zeroPad = (num, places) => String(num).padStart(places, '0');
     let idx = 0;
     
+    serials.push("dsfsfsdfdsfsdfdsfdsafasdfdsafadsfsa100");
+    
+    serials.push("dsfsfsdfdsfsdfdsfdsafasdfdsafadsfsa100");
+    
+    serials.push("dsfsfsdfdsfsdfdsfdsafasdfdsafadsfsa100");
+    
+    serials.push("dsfsfsdfdsfsdfdsfdsafasdfdsafadsfsa100");
+
       const dataList = serials.map(
         (data) => {    
         idx ++;
         
-        const dataName = "Spark " + zeroPad(idx,2);
+        const dataName = "SPark " + zeroPad(idx,2);
         console.log(dataName);
     
         return <Super_Admin_Manage_Customer3 key = {data} customerName={dataName} serial={data} onClick={() => Clicked_Serial(data, dataName) }></Super_Admin_Manage_Customer3>

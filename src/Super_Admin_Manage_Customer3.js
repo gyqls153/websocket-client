@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TemplateStyle = styled.div`
-    background-color: white;
     margin-left: 5%;
     margin-right: 5%;
     border-radius: 15px;
@@ -47,12 +46,20 @@ const TextWrap = styled.div`
     margin-bottom: 0px;
 `;
 
+const Line = styled.hr`
+    width: 500px;
+`;
+
 function Super_Admin_Manage_Customer3(props) {
     return(
+        <div>
         <TemplateStyle onClick={() => props.onClick()}>  
             <IconeButton src="Common/List_icon2.png"></IconeButton>
             <TextWrap><TextMain>{props.customerName}</TextMain><TextMain2>{props.serial}</TextMain2></TextWrap>
         </TemplateStyle>
+        <Line></Line>
+        </div>
+        
     );
 }
 
