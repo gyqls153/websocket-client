@@ -66,7 +66,6 @@ function Admin_Setting_New(props)
 
     const zeroPad = (num, places) => String(num).padStart(places, '0');
     let idx = 0;
-    
       const dataList = serials.map(
         (data) => {    
         idx ++;
