@@ -83,7 +83,7 @@ const HOME_BUTTON = styled.button`
     bottom: 20px;
     width: 40%;
     margin-left: 51%;
-    padding: 7px 0;
+    padding: 10px 0;
     text-align: center;
     color: white;
     border: 0;
@@ -98,7 +98,7 @@ const BACKBUTTON = styled.button`
     position: absolute;
     bottom: 20px;
     width: 40%;
-    padding: 7px 0;
+    padding: 10px 0;
     margin-left: 9%;
     text-align: center;
     color: white;
