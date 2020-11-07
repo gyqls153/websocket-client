@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const ARROW_UP_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) translateY(-220%) rotate(270deg);
+  transform:translateX(-50%) translateY(-180%) rotate(270deg);
   left:50%;
   top:50%;
   border : 0;
@@ -16,7 +16,7 @@ const ARROW_UP_BTN = styled.img`
 
 const ARROW_LEFT_BTN = styled.img`
   position: absolute;
-  transform:translateX(-170%) translateY(-100%) rotate(180deg);
+  transform:translateX(-170%) translateY(-60%) rotate(180deg);
   left:50%;
   top:50%;
   border : 0;
@@ -25,7 +25,7 @@ const ARROW_LEFT_BTN = styled.img`
 
 const ARROW_RIGHT_BTN = styled.img`
   position: absolute;
-  transform:translateX(70%) translateY(-100%) rotate(0deg);
+  transform:translateX(70%) translateY(-60%) rotate(0deg);
   left:50%;
   top:50%;
   border : 0;
@@ -34,7 +34,7 @@ const ARROW_RIGHT_BTN = styled.img`
 
 const ARROW_DOWN_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) translateY(20%) rotate(90deg);
+  transform:translateX(-50%) translateY(60%) rotate(90deg);
   left:50%;
   top:50%;
   border : 0;
@@ -43,7 +43,7 @@ const ARROW_DOWN_BTN = styled.img`
 
 const ARROW_CENTOR_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) translateY(-100%) rotate(90deg);
+  transform:translateX(-50%) translateY(-60%) rotate(90deg);
   left:50%;
   top: 50%;
   border : 0;
@@ -80,7 +80,7 @@ const BACK_BUTTON = styled.img`
 
 const HOME_BUTTON = styled.button`
     position: absolute;
-    bottom: 100px;
+    bottom: 60px;
     width: 40%;
     margin-left: 51%;
     padding: 10px 0;
@@ -96,7 +96,7 @@ const HOME_BUTTON = styled.button`
 
 const BACKBUTTON = styled.button`
     position: absolute;
-    bottom: 100px;
+    bottom: 60px;
     width: 40%;
     padding: 10px 0;
     margin-left: 9%;
