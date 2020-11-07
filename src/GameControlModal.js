@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const ARROW_UP_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) translateY(-100%) rotate(270deg);
+  transform:translateX(-50%) translateY(-120%) rotate(270deg);
   left:50%;
   top:50%;
   border : 0;
@@ -16,7 +16,7 @@ const ARROW_UP_BTN = styled.img`
 
 const ARROW_LEFT_BTN = styled.img`
   position: absolute;
-  transform:translateX(-150%) rotate(180deg);
+  transform:translateX(-170%) rotate(180deg);
   left:50%;
   top:50%;
   border : 0;
@@ -25,7 +25,7 @@ const ARROW_LEFT_BTN = styled.img`
 
 const ARROW_RIGHT_BTN = styled.img`
   position: absolute;
-  transform:translateX(50%) rotate(0deg);
+  transform:translateX(70%) rotate(0deg);
   left:50%;
   top:50%;
   border : 0;
@@ -34,7 +34,7 @@ const ARROW_RIGHT_BTN = styled.img`
 
 const ARROW_DOWN_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) translateY(100%) rotate(90deg);
+  transform:translateX(-50%) translateY(120%) rotate(90deg);
   left:50%;
   top:50%;
   border : 0;
