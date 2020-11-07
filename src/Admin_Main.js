@@ -149,8 +149,8 @@ function Admin_Main(props) {
     <MAIN_BACKGROUND>
     <LOGO src="Admin/Login_Logo.png"></LOGO>
     <FORM>
-      <INPUT type="text" placeholder="ID" id="_id"></INPUT>
-      <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
+      <INPUT type="text" placeholder=" ID" id="_id"></INPUT>
+      <INPUT2 type="password" placeholder=" Password" id="_Password"></INPUT2>
       <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </FORM>
     </MAIN_BACKGROUND>
