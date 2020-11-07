@@ -22,7 +22,7 @@ function Admin_Setting_Game_Selection(props)
     top: 35%;
     left: 50%;
     transform:translateX(-50%);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     `
 
@@ -32,7 +32,7 @@ function Admin_Setting_Game_Selection(props)
     color: black;
     text-align: center;
     margin: 0px;
-    font-size: 20px;
+    font-size: 17px;
     `
 
     const BACKBUTTON = styled.img`
