@@ -112,7 +112,7 @@ function Admin_Main(props) {
     background-Color: white;
     border: 0px;
     margin-top: 100px;
-    padding-left: 20px;
+    padding-left: 10px;
   `
 
   const INPUT2 = styled.input`
@@ -124,7 +124,7 @@ function Admin_Main(props) {
   background-Color: white;
   border: 0px;
   margin-top: 10px;
-  padding-left: 20px;
+  padding-left: 10px;
   `
 
 
@@ -146,9 +146,6 @@ function Admin_Main(props) {
     color: white;
     font-weight: bold;
   `
-
-  console.log(document.body)
-
 
   useEffect(() => {
       document.body.style.backgroundColor = "black";
