@@ -32,7 +32,7 @@ const NANUM_GOTHIC = styled.span`
     font-weight: bold;
     font-size: 30px;
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 50%;
     transform:translateX(-50%);
     `

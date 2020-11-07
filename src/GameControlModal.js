@@ -80,7 +80,7 @@ const BACK_BUTTON = styled.img`
 
 const HOME_BUTTON = styled.button`
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     width: 40%;
     margin-left: 55%;
     padding: 15px 0;
@@ -95,7 +95,7 @@ const HOME_BUTTON = styled.button`
 
 const BACKBUTTON = styled.button`
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     width: 40%;
     padding: 15px 0;
     margin-left: 5%;
@@ -113,11 +113,11 @@ const NANUM_GOTHIC = styled.p`
 font-family: 'Nanum Gothic', sans-serif;
 color: white;
 position: absolute;
-top: 0%;
+top: -7px;
 left: 50%;
 transform:translateX(-50%);
 font-weight: bold;
-font-size: 20px;
+font-size: 30px;
 `
 
 const MAIN_BACKGROUND = styled.div`
