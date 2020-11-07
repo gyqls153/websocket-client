@@ -9,7 +9,7 @@ margin-top: 10px;
 `
 
 const HEADER = styled.div`
-    background-color: red;
+    background-color: #CC2126;
     height: 70px;
 `;
 
@@ -50,7 +50,7 @@ const BUTTON = styled.button`
     left: 25%;
     width: 50%;
     height: 60px;
-    background-Color: red;
+    background-Color: #CC2126;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;

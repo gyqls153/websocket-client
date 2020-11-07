@@ -8,42 +8,43 @@ const TemplateStyle = styled.div`
     margin-right: 5%;
     border-radius: 15px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    height: 50px;
 `;
-
 const IconeButton = styled.img`
-    margin-top: 5px;
-    margin-left: 20px;
+    position: relative;
     width: 30px;
     height: 30px;
+    left: 10px;
+    top: 10px;
 `;
 
 const RemoveButton = styled.img`
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 20px;
+    position: relative;
     width: 30px;
     height: 30px;
-    justify-self: flex-end;
+    left: 330px;
+    top: -55px;
 `;
 
-const TextMain = styled.p`
+const TextMain = styled.div`
+    position: relative;
+    font-size: 16px;
+    top: -20px;
+    left: 50px;
+
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+`;
+
+const TextMain2 = styled.div`
+    position: relative;
     font-size: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-`;
-
-const TextMain2 = styled.p`
-    font-size: 6px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    top: -20px;
+    left: 50px;
     color: gray;
-`;
-
-const TextWrap = styled.div`
-    margin-top: 10px;
-    margin-bottom: 0px;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
 `;
 
 function Super_Admin_Manage_Customer2(props) {
@@ -63,7 +64,8 @@ function Super_Admin_Manage_Customer2(props) {
     return(
         <TemplateStyle>  
             <IconeButton src="Common/List_icon2.png"></IconeButton>
-            <TextWrap><TextMain>{props.customerName}</TextMain><TextMain2>{props.serial}</TextMain2></TextWrap>
+            <TextMain>{props.customerName}</TextMain>
+            <TextMain2>{props.serial}</TextMain2>
             <RemoveButton src="Common/Remove_Button.png" onClick={() => onRemoveButtonClick(props.id)}></RemoveButton>
         </TemplateStyle>
     );

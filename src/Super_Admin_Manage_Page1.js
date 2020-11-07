@@ -16,7 +16,7 @@ import AppContextProvider, {
 } from './AppContextProvider';
 
 const HEADER = styled.div`
-    background-color: red;
+    background-color: #CD282D;
     height: 70px;
 `;
 
@@ -105,7 +105,7 @@ const setCurrentCustomer = useSetCurrentCustomer();
 
             <NANUM_GOTHIC>Registration information</NANUM_GOTHIC>
             <ADDBUTTON onClick={() => {props.history.push("super_admin_create_account")}} src="Common/Add_Button.png"></ADDBUTTON>
-              {fruitsList}                
+              {fruitsList}         
             </MAINBACKGROUND>
         </>
     );

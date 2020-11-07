@@ -8,28 +8,32 @@ const TemplateStyle = styled.div`
     margin-right: 5%;
     border-radius: 15px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between; 
+    position: relative;
+    height: 40px;
 `;
 
 const IconeButton = styled.img`
-    margin-top: 2px;
-    margin-left: 20px;
+    position: relative;
     width: 30px;
     height: 30px;
+    left: 10px;
+    top: 5px;
 `;
 
 const RemoveButton = styled.img`
-    margin-top: 2px;
-    float: right;
+    position: relative;
     width: 30px;
     height: 30px;
-    margin-right: 20px;
+    left: 330px;
+    top: -50px;
 `;
 
 const TextWrap = styled.div`
-    margin-top: 8px;
-    margin-bottom: 8px;
+   position: relative;
+   top: -20px;
+   left: 50px;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
 `;
 
 function Super_Admin_Manage_Customer(props) {

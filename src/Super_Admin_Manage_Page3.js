@@ -8,7 +8,7 @@ import { useCurrentCustomer, useSetCurrentCustomer } from './AppContextProvider'
 
 
 const HEADER = styled.div`
-    background-color: red;
+    background-color: #CD282D;
     height: 70px;
 `;
 
@@ -110,7 +110,7 @@ function Super_Admin_Manage_Page3(props) {
     (data) => {    
     idx ++;
     
-    const dataName = "Spark " + zeroPad(idx,2);
+    const dataName = "SPark " + zeroPad(idx,2);
     console.log(dataName);
 
     return <Super_Admin_Manage_Customer2 key = {data} customerName={dataName} serial={data} removeFunc={() => removeSerial(data)}></Super_Admin_Manage_Customer2>

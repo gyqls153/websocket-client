@@ -66,7 +66,7 @@ function Admin_Setting_New(props)
 
     const zeroPad = (num, places) => String(num).padStart(places, '0');
     let idx = 0;
-      const dataList = serials.map(
+      let dataList = serials.map(
         (data) => {    
         idx ++;
         
@@ -76,15 +76,13 @@ function Admin_Setting_New(props)
         return <Super_Admin_Manage_Customer3 key = {data} customerName={dataName} serial={data} onClick={() => Clicked_Serial(data, dataName) }></Super_Admin_Manage_Customer3>
         }
         );
-    
-
+        
     return (
         <>
             <HEADER>
                 <NANUM_GOTHIC>구매 제품 목록</NANUM_GOTHIC>
             </HEADER>
             <MAINBACKGROUND>
-                <MAINGAP/>
                 {dataList}
             </MAINBACKGROUND>
         </>

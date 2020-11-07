@@ -20,6 +20,8 @@ import Super_Admin_Manage_Page2 from './Super_Admin_Manage_Page2';
 import Super_Admin_Manage_Page3 from './Super_Admin_Manage_Page3';
 import Admin_Setting_Selected_Device from './Admin_Setting_Selected_Device'
 import Admin_Setting_Game_Selection from './Admin_Setting_Game_Selection'
+import Super_Admin_Manage_Customer3 from './Super_Admin_Manage_Customer3';
+import Super_Admin_Manage_Customer2 from './Super_Admin_Manage_Customer2';
 
 axios.defaults.baseURL = `http://${config[config.ENV].addressIp}`;
 
@@ -40,6 +42,8 @@ function App() {
               <Route path ='/super_admin_manage_page1' component={Super_Admin_Manage_Page1}></Route>
               <Route path ='/super_admin_manage_page2' component={Super_Admin_Manage_Page2}></Route>
               <Route path ='/super_admin_manage_page3' component={Super_Admin_Manage_Page3}></Route>
+              <Route path ='/Super_Admin_Manage_Customer2' component={Super_Admin_Manage_Customer2}></Route>
+              
 
           </Switch>
       </Router>

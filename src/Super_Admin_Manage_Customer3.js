@@ -3,48 +3,37 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TemplateStyle = styled.div`
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: left;
+    position: relative;
+    height: 60px;
 `;
 
 const IconeButton = styled.img`
-    margin-top: 5px;
-    margin-left: 20px;
-    margin-right: 30px;
-    width: 30px;
-    height: 30px;
-`;
-
-const RemoveButton = styled.img`
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 20px;
-    width: 30px;
-    height: 30px;
-    justify-self: flex-end;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
 `;
 
 const TextMain = styled.p`
-    font-size: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-size: 20px;
+    position: absolute;
+    top: -7px;
+    left: 60px;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
 `;
 
 const TextMain2 = styled.p`
-    font-size: 6px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-size: 10px;
     color: gray;
+    position: relative;
+    left: 60px;
+    top: 35px;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
 `;
 
-const TextWrap = styled.div`
-    margin-top: 10px;
-    margin-bottom: 0px;
-`;
 
 const Line = styled.hr`
     width: 100vw;
@@ -55,7 +44,8 @@ function Super_Admin_Manage_Customer3(props) {
         <div>
         <TemplateStyle onClick={() => props.onClick()}>  
             <IconeButton src="Common/List_icon2.png"></IconeButton>
-            <TextWrap><TextMain>{props.customerName}</TextMain><TextMain2>{props.serial}</TextMain2></TextWrap>
+            <TextMain>{props.customerName}</TextMain>
+            <TextMain2>{props.serial}</TextMain2>
         </TemplateStyle>
         <Line></Line>
         </div>

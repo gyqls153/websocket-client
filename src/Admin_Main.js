@@ -110,7 +110,6 @@ function Admin_Main(props) {
     font-family: 'Nanum Gothic', sans-serif;
     width: 100%;
     background-Color: white;
-    border-radius: 5px;
     border: 0px;
     margin-top: 100px;
   `
@@ -122,7 +121,6 @@ function Admin_Main(props) {
   font-family: 'Nanum Gothic', sans-serif;
   width: 100%;
   background-Color: white;
-  border-radius: 5px;
   border: 0px;
   margin-top: 10px;
   `
@@ -138,7 +136,7 @@ function Admin_Main(props) {
     bottom:100px;
     width: 100%;
     height: 50px;
-    background-Color: red;
+    background-Color: #CC2126;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;

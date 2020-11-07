@@ -64,8 +64,9 @@ function Admin_Setting_Selected_Device(props)
 
     const BACKBUTTON = styled.img`
     width: 20px;
-    margin-left: 10px;
-    margin-top: 10px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 5px;
     `
 
     const goToGameSelection = () => {

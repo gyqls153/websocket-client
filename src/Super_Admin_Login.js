@@ -42,9 +42,8 @@ function Super_Admin_Login(props) {
       font-family: 'Nanum Gothic', sans-serif;
       width: 200px;
       background-Color: white;
-      border-radius: 5px;
       border: 1px solid;
-      border-color: #000000;
+      border-color: #ECECEC;
     `
   
     const ACCOUNT_LABEL = styled.label`
@@ -60,7 +59,7 @@ function Super_Admin_Login(props) {
       height: 50px;
       padding-left: 30px;
       padding-right: 30px;
-      background-Color: red;
+      background-Color: #CD282D;
       border: 0;
       @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
       font-family: 'Nanum Gothic', sans-serif;
@@ -94,8 +93,8 @@ function Super_Admin_Login(props) {
       <FORM>
         <ACCOUNT_LABEL><NANUM_GOTHIC>로그인</NANUM_GOTHIC></ACCOUNT_LABEL>
         <LOGO src="Super_Admin/Login_Logo.png"></LOGO>
-        <INPUT type="text" placeholder="ID" id="id"></INPUT>
-        <INPUT type="password" placeholder="Password" id="password"></INPUT>
+        <INPUT type="text" placeholder=" ID" id="id"></INPUT>
+        <INPUT type="password" placeholder=" Password" id="password"></INPUT>
         <BUTTON onClick={() => LoginClick()}>Login</BUTTON>
       </FORM>
       </MAIN_BACKGROUND>

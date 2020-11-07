@@ -72,7 +72,8 @@ const HEADER = styled.div`
 const BACK_BUTTON = styled.img`
   width: 20px;
   height: 30px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
 `
 
 const HOME_BUTTON = styled.button`

@@ -4,7 +4,7 @@ import { useEnableGameDic, useSelectedLoginId, useSerialInfoList, useSetSerialIn
 import styled from 'styled-components'
 
 const di = styled.div`
-background-color : red;
+background-color : #CD282D;
 `;
 
 function Super_Admin_UserSetting_1(props)

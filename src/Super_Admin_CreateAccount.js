@@ -180,7 +180,7 @@ function Super_Admin_CreateAccount(props) {
   const BUTTON = styled.button`
     width: 80%;
     height: 70px;
-    background-Color: red;
+    background-Color: #CC2126;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
@@ -191,7 +191,7 @@ function Super_Admin_CreateAccount(props) {
   `
   
   const HEADER = styled.div`
-      background-color: red;
+      background-color: #CC2126;
       height: 70px;
   `;
 

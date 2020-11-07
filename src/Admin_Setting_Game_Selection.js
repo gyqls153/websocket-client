@@ -10,7 +10,8 @@ function Admin_Setting_Game_Selection(props)
     width: 20px;
     height: 30px;
     position: absolute;
-    top: 25%;
+    top: 25px;
+    left: 5px;
     `
 
     const NANUM_GOTHIC = styled.span`
@@ -29,6 +30,7 @@ function Admin_Setting_Game_Selection(props)
     color: black;
     text-align: center;
     margin: 0px;
+    font-size: 14px;
     `
 
     const BACKBUTTON = styled.img`
@@ -65,12 +67,12 @@ function Admin_Setting_Game_Selection(props)
     `
 
     const LINE = styled.hr`
-    width: 100%;    
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 0px;
+        width: 100%;    
+        position: absolute;
+        bottom: 0px;
+        margin-bottom: 0px;
     `;
-
+    
     const MAIN_DIV = styled.div`
     display: flex;
     flex-direction: column;
