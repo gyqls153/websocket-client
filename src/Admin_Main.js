@@ -108,10 +108,11 @@ function Admin_Main(props) {
     margin-left: 10px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    width: 100%;
+    width: 90%;
     background-Color: white;
     border: 0px;
     margin-top: 100px;
+    padding-left: 20px;
   `
 
   const INPUT2 = styled.input`
@@ -119,10 +120,11 @@ function Admin_Main(props) {
   margin-left: 10px;
   @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
   font-family: 'Nanum Gothic', sans-serif;
-  width: 100%;
+  width: 90%;
   background-Color: white;
   border: 0px;
   margin-top: 10px;
+  padding-left: 20px;
   `
 
 
@@ -149,8 +151,8 @@ function Admin_Main(props) {
     <MAIN_BACKGROUND>
     <LOGO src="Admin/Login_Logo.png"></LOGO>
     <FORM>
-      <INPUT type="text" placeholder=" ID" id="_id"></INPUT>
-      <INPUT2 type="password" placeholder=" Password" id="_Password"></INPUT2>
+      <INPUT type="text" placeholder="ID" id="_id"></INPUT>
+      <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
       <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </FORM>
     </MAIN_BACKGROUND>

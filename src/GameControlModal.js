@@ -12,6 +12,10 @@ const ARROW_UP_BTN = styled.img`
   top:50%;
   border : 0;
   width: 100px;
+  &:active {
+    content:url("Remote/ArrowRight.PNG");
+    width: 55px;
+  }
 `
 
 const ARROW_LEFT_BTN = styled.img`
@@ -21,6 +25,11 @@ const ARROW_LEFT_BTN = styled.img`
   top:50%;
   border : 0;
   width: 100px;
+  &:active {
+    content:url("Remote/ArrowRight.PNG");
+    width: 55px;
+    transform:translateX(-270%) translateY(-60%) rotate(180deg);
+  }
 `
 
 const ARROW_RIGHT_BTN = styled.img`
@@ -30,6 +39,11 @@ const ARROW_RIGHT_BTN = styled.img`
   top:50%;
   border : 0;
   width: 100px;
+  &:active {
+    content:url("Remote/ArrowRight.PNG");
+    width: 55px;
+    transform:translateX(170%) translateY(-60%) rotate(0deg);
+  }
 `
 
 const ARROW_DOWN_BTN = styled.img`
@@ -39,6 +53,10 @@ const ARROW_DOWN_BTN = styled.img`
   top:50%;
   border : 0;
   width: 100px;
+  &:active {
+    content:url("Remote/ArrowRight.PNG");
+    width: 55px;
+  }
 `
 
 const ARROW_CENTOR_BTN = styled.img`
@@ -48,6 +66,9 @@ const ARROW_CENTOR_BTN = styled.img`
   top: 50%;
   border : 0;
   width: 100px;
+  &:active {
+    content:url("Remote/ArrowCenter.PNG");
+  }
 `
 
 const JOYSTICK_ON = styled.img`
@@ -221,7 +242,7 @@ function GameControlModal(props)
           <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
         </HEADER>
         {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
-        <ARROW_UP_BTN onClick={() => onClickedRemoteCommand('UP')} src="Remote/Btn_Arrow.PNG"/>
+        <ARROW_UP_BTN onPress={() => console.log("press")} onClick={() => onClickedRemoteCommand('UP')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_DOWN_BTN onClick={() => onClickedRemoteCommand('DOWN')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')} src="Remote/Btn_Arrow.PNG"/>
