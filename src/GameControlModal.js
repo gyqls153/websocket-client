@@ -91,6 +91,7 @@ const HOME_BUTTON = styled.button`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     color: white;
+    font-size: 30px;
 `
 
 const BACKBUTTON = styled.button`
@@ -106,6 +107,7 @@ const BACKBUTTON = styled.button`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     color: white;
+    font-size: 30px;
 `
 
 const NANUM_GOTHIC = styled.p`
