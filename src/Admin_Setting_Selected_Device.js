@@ -12,19 +12,21 @@ function Admin_Setting_Selected_Device(props)
     const NANUM_GOTHIC_1 = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    color: white;
+    color: rgb(212, 212, 212);
     text-align: center;
     margin: 0px;
-    padding-top: 80px;
+    padding-top: 110px;
+    font-size: 10px;
     `
 
     const NANUM_GOTHIC_2 = styled.p`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    color: white;
+    color: rgb(212, 212, 212);
     text-align: center;
     margin: 0px;
     padding-top: 0px;
+    font-size: 10px;
     `
 
     const NANUM_GOTHIC_3 = styled.p`
@@ -35,7 +37,6 @@ function Admin_Setting_Selected_Device(props)
     text-align: center;
     margin: 0px;
     padding-top: 40px;
-    font-weight: bold;
     `
 
     const LOGO = styled.img`

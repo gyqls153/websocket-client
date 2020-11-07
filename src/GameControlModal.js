@@ -7,36 +7,36 @@ import styled from 'styled-components'
 
 const ARROW_UP_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) rotate(270deg);
+  transform:translateX(-50%) translateY(-100%) rotate(270deg);
   left:50%;
-  top:25%;
+  top:50%;
   border : 0;
   width: 100px;
 `
 
 const ARROW_LEFT_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) rotate(180deg);
-  left:20%;
-  top:40%;
+  transform:translateX(-150%) rotate(180deg);
+  left:50%;
+  top:50%;
   border : 0;
   width: 100px;
 `
 
 const ARROW_RIGHT_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) rotate(0deg);
-  left:80%;
-  top:40%;
+  transform:translateX(50%) rotate(0deg);
+  left:50%;
+  top:50%;
   border : 0;
   width: 100px;
 `
 
 const ARROW_DOWN_BTN = styled.img`
   position: absolute;
-  transform:translateX(-50%) rotate(90deg);
+  transform:translateX(-50%) translateY(100%) rotate(90deg);
   left:50%;
-  top:55%;
+  top:50%;
   border : 0;
   width: 100px;
 `
@@ -45,23 +45,23 @@ const ARROW_CENTOR_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) rotate(90deg);
   left:50%;
-  top:40%;
+  top: 50%;
   border : 0;
   width: 100px;
 `
 
 const JOYSTICK_ON = styled.img`
   position: absolute;
-  width: 50px;
+  width: 60px;
   right: 15px;
-  top: 20%;
+  top: 100px;
   `
 
 const JOYSTICK_OFF = styled.img`
   position: absolute;
-  width: 70px;
+  width: 60px;
   right: 15px;
-  top: 30%;
+  top: 100px;
 `
 
 const HEADER = styled.div`
@@ -82,8 +82,8 @@ const HOME_BUTTON = styled.button`
     position: absolute;
     bottom: 20px;
     width: 40%;
-    margin-left: 55%;
-    padding: 15px 0;
+    margin-left: 51%;
+    padding: 7px 0;
     text-align: center;
     color: white;
     border: 0;
@@ -91,15 +91,15 @@ const HOME_BUTTON = styled.button`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 `
 
 const BACKBUTTON = styled.button`
     position: absolute;
     bottom: 20px;
     width: 40%;
-    padding: 15px 0;
-    margin-left: 5%;
+    padding: 7px 0;
+    margin-left: 9%;
     text-align: center;
     color: white;
     border: 0;
@@ -107,7 +107,7 @@ const BACKBUTTON = styled.button`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 `
 
 const NANUM_GOTHIC = styled.p`
@@ -219,8 +219,8 @@ function GameControlModal(props)
         <HEADER>
           <BACK_BUTTON src= "Remote/Btn_BackArrow.PNG" onClick={() => props.history.goBack()}></BACK_BUTTON>
           <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
-          {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
         </HEADER>
+        {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
         <ARROW_UP_BTN onClick={() => onClickedRemoteCommand('UP')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_DOWN_BTN onClick={() => onClickedRemoteCommand('DOWN')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')} src="Remote/Btn_Arrow.PNG"/>

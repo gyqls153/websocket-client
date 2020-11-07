@@ -24,7 +24,7 @@ const ToggleButton = styled.img`
 `;
 
 const TextMain = styled.p`
-    font-size: 20px;
+    font-size: 17px;
     position: absolute;
     left: 75px;
     top: 0px;
