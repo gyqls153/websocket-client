@@ -147,7 +147,19 @@ function Admin_Main(props) {
     font-weight: bold;
   `
 
+  console.log(document.body)
+
+
+  useEffect(() => {
+      document.body.style.backgroundColor = "black";
+
+    return () => {  
+      document.body.style.backgroundColor = "#EBEBEB";
+    } 
+  }, []);
+
   return (
+
     <MAIN_BACKGROUND>
     <LOGO src="Admin/Login_Logo.png"></LOGO>
     <FORM>
