@@ -27,7 +27,7 @@ const TextMain = styled.p`
     font-size: 17px;
     position: absolute;
     left: 75px;
-    top: 0px;
+    top: 10px;
     
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
