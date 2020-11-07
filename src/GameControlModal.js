@@ -85,7 +85,22 @@ const HOME_BUTTON = styled.button`
     text-align: center;
     color: white;
     border: 0;
-    background: red;
+    background: #CC2126;
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', sans-serif;
+    color: white;
+`
+
+const BACKBUTTON = styled.button`
+    position: absolute;
+    bottom: 50px;
+    width: 80%;
+    margin-left: 10%;
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    border: 0;
+    background: black;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
     color: white;
@@ -204,6 +219,7 @@ function GameControlModal(props)
         <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_CENTOR_BTN onClick={() => onClickedRemoteCommand('RETURN')} src="Remote/Btn_Center.PNG"/>
+        <BACKBUTTON onClick={() => onClickedRemoteCommand('BACK')}>Back</BACKBUTTON>
         <HOME_BUTTON onClick={() => onClickedRemoteCommand('HOME')}>Home</HOME_BUTTON>
       </MAIN_BACKGROUND>
       
