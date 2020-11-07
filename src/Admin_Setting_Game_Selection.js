@@ -73,7 +73,7 @@ function Admin_Setting_Game_Selection(props)
         position: absolute;
         bottom: 0px;
         margin-bottom: 0px;
-        border: solid 1px gray;
+        border: solid 2px gray;
     `;
     
     const MAIN_DIV = styled.div`
