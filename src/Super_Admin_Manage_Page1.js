@@ -17,14 +17,14 @@ import AppContextProvider, {
 
 const HEADER = styled.div`
     background-color: #CD282D;
-    height: 70px;
+    height: 100px;
 `;
 
   const LOGO = styled.img`
-  width: 100px;
+  width: 150px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 10px;
+  top: 20px;
   `
 
 const NANUM_GOTHIC = styled.p`

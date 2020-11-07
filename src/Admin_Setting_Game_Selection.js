@@ -11,7 +11,7 @@ function Admin_Setting_Game_Selection(props)
     height: 30px;
     position: absolute;
     top: 25px;
-    left: 5px;
+    left: 15px;
     `
 
     const NANUM_GOTHIC = styled.span`
@@ -22,6 +22,8 @@ function Admin_Setting_Game_Selection(props)
     top: 35%;
     left: 50%;
     transform:translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
     `
 
     const NANUM_GOTHIC_2 = styled.p`
@@ -71,6 +73,7 @@ function Admin_Setting_Game_Selection(props)
         position: absolute;
         bottom: 0px;
         margin-bottom: 0px;
+        border: solid 5px gray;
     `;
     
     const MAIN_DIV = styled.div`

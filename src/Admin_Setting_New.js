@@ -26,6 +26,8 @@ function Admin_Setting_New(props)
     text-align: center;
     margin: 0px;
     padding-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
     `
     
     const loginId = useAdminLoginId();

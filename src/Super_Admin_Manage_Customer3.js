@@ -18,8 +18,8 @@ const IconeButton = styled.img`
 const TextMain = styled.p`
     font-size: 20px;
     position: absolute;
-    top: -7px;
-    left: 60px;
+    top: -13px;
+    left: 75px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
 `;
@@ -28,7 +28,7 @@ const TextMain2 = styled.p`
     font-size: 10px;
     color: gray;
     position: relative;
-    left: 60px;
+    left: 75px;
     top: 35px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;

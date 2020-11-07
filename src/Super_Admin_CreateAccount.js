@@ -142,10 +142,10 @@ function Super_Admin_CreateAccount(props) {
   font-size: 20px;
   `
   const LOGO = styled.img`
-  width: 100px;
+  width: 150px;
   position: absolute; 
   left: 50%; transform: translateX(-50%);
-  top: 10px;
+  top: 20px;
   `
   const MAIN_BACKGROUND = styled.div`
   `
@@ -189,17 +189,17 @@ function Super_Admin_CreateAccount(props) {
     font-weight: bold;
     margin-top: 100px;
   `
-  
   const HEADER = styled.div`
-      background-color: #CC2126;
-      height: 70px;
+  background-color: #CD282D;
+  height: 100px;
   `;
+
 
 
   const BACKBUTTON = styled.img`
     width: 20px;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 15px;
+    margin-top: 30px;
     `
 
   return (

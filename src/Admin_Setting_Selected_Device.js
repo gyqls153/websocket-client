@@ -35,6 +35,7 @@ function Admin_Setting_Selected_Device(props)
     text-align: center;
     margin: 0px;
     padding-top: 40px;
+    font-weight: bold;
     `
 
     const LOGO = styled.img`
@@ -66,7 +67,7 @@ function Admin_Setting_Selected_Device(props)
     width: 20px;
     height: 30px;
     margin-top: 25px;
-    margin-left: 5px;
+    margin-left: 15px;
     `
 
     const goToGameSelection = () => {

@@ -51,36 +51,38 @@ const ARROW_CENTOR_BTN = styled.img`
 `
 
 const JOYSTICK_ON = styled.img`
+  position: absolute;
   width: 50px;
-  margin-right: 15px;
+  right: 15px;
+  top: 20%;
   `
 
 const JOYSTICK_OFF = styled.img`
-  width: 50px;
-  margin-right: 15px;
+  position: absolute;
+  width: 70px;
+  right: 15px;
+  top: 30%;
 `
 
 const HEADER = styled.div`
   width: 100%;
   height: 80px;
   background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
 `
 
 const BACK_BUTTON = styled.img`
   width: 20px;
   height: 30px;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 25px;
+  margin-left: 15px;
 `
 
 const HOME_BUTTON = styled.button`
     position: absolute;
     bottom: 0;
-    width: 80%;
-    margin-left: 10%;
+    width: 40%;
+    margin-left: 55%;
     padding: 15px 0;
     text-align: center;
     color: white;
@@ -93,10 +95,10 @@ const HOME_BUTTON = styled.button`
 
 const BACKBUTTON = styled.button`
     position: absolute;
-    bottom: 50px;
-    width: 80%;
-    margin-left: 10%;
+    bottom: 0;
+    width: 40%;
     padding: 15px 0;
+    margin-left: 5%;
     text-align: center;
     color: white;
     border: 0;
@@ -110,9 +112,12 @@ const NANUM_GOTHIC = styled.p`
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 font-family: 'Nanum Gothic', sans-serif;
 color: white;
-display: inline;
-
-margin-left: 30px;
+position: absolute;
+top: 0%;
+left: 50%;
+transform:translateX(-50%);
+font-weight: bold;
+font-size: 20px;
 `
 
 const MAIN_BACKGROUND = styled.div`

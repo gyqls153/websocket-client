@@ -16,8 +16,8 @@ const IconeButton = styled.img`
 `;
 
 const ToggleButton = styled.img`
-    width: 40px;
-    height: 20px;
+    width: 60px;
+    height: 30px;
     position: absolute;
     top: 35px;
     right: 10px;
@@ -26,7 +26,7 @@ const ToggleButton = styled.img`
 const TextMain = styled.p`
     font-size: 20px;
     position: absolute;
-    left: 65px;
+    left: 75px;
     top: 0px;
     
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -36,8 +36,8 @@ const TextMain = styled.p`
 const TextMain2 = styled.p`
     font-size: 13px;
     position: absolute;
-    left: 65px;
-    top: 30px;
+    left: 75px;
+    top: 35px;
     color: gray;
     width: 240px;
     

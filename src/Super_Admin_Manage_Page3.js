@@ -9,13 +9,13 @@ import { useCurrentCustomer, useSetCurrentCustomer } from './AppContextProvider'
 
 const HEADER = styled.div`
     background-color: #CD282D;
-    height: 70px;
+    height: 100px;
 `;
 
 const BACKBUTTON = styled.img`
-width: 20px;
-margin-left: 10px;
-margin-top: 10px;
+    width: 20px;
+    margin-left: 15px;
+    margin-top: 30px;
 `
 
 const LOGO = styled.img`
@@ -25,12 +25,16 @@ left: 50%; transform: translateX(-50%);
 top: 2%;
 `
 
-const NANUM_GOTHIC = styled.p`
+const NANUM_GOTHIC = styled.span`
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    text-align: center;
-    margin: -30px;
     color: white;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform:translateX(-50%);
     `
 
 const INPUT = styled.input`
@@ -69,7 +73,8 @@ const BUTTON = styled.button`
   const ADDBUTTON = styled.img`
     float: right;
     width: 40px;
-    margin-right: 10px;
+    margin-right: 15px;
+    margin-top: 30px;
 `;
 
 function Super_Admin_Manage_Page3(props) {
