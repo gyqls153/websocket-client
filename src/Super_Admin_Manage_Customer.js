@@ -21,11 +21,11 @@ const IconeButton = styled.img`
 `;
 
 const RemoveButton = styled.img`
-    position: relative;
+    position: absolute;
     width: 30px;
     height: 30px;
-    left: 330px;
-    top: -50px;
+    right: 10px;
+    top: 5px;
 `;
 
 const TextWrap = styled.div`

@@ -20,17 +20,17 @@ const IconeButton = styled.img`
 `;
 
 const RemoveButton = styled.img`
-    position: relative;
+    position: absolute;
     width: 30px;
     height: 30px;
-    left: 330px;
-    top: -55px;
+    right: 10px;
+    top: 10px;
 `;
 
 const TextMain = styled.div`
     position: relative;
     font-size: 16px;
-    top: -20px;
+    top: -25px;
     left: 50px;
 
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -40,7 +40,7 @@ const TextMain = styled.div`
 const TextMain2 = styled.div`
     position: relative;
     font-size: 10px;
-    top: -20px;
+    top: -25px;
     left: 50px;
     color: gray;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
