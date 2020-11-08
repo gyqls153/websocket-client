@@ -26,7 +26,7 @@ const ARROW_LEFT_BTN = styled.img`
   border : 0;
   width: 100px;
   &:active {
-    content:url("Remote/ArrowRight.PNG");
+    content:url("Remote/ArrowRight.png");
     width: 55px;
     transform:translateX(-270%) translateY(-60%) rotate(180deg);
   }
@@ -40,7 +40,7 @@ const ARROW_RIGHT_BTN = styled.img`
   border : 0;
   width: 100px;
   &:active {
-    content:url("Remote/ArrowRight.PNG");
+    content:url("Remote/ArrowRight.png");
     width: 55px;
     transform:translateX(170%) translateY(-60%) rotate(0deg);
   }
@@ -54,7 +54,7 @@ const ARROW_DOWN_BTN = styled.img`
   border : 0px;
   width: 100px;
   &:active {
-    content:url("Remote/ArrowRight.PNG");
+    content:url("Remote/ArrowRight.png");
     width: 55px;
   }
 `
@@ -67,7 +67,7 @@ const ARROW_CENTOR_BTN = styled.img`
   border : 0;
   width: 100px;
   &:active {
-    content:url("Remote/ArrowCenter.PNG");
+    content:url("Remote/ArrowCenter.png");
   }
 `
 
