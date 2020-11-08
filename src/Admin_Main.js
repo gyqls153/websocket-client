@@ -27,6 +27,10 @@ import config from './config.json'
 import styled from 'styled-components'
 
 function Admin_Main(props) {
+
+  const clientHeight = document.documentElement.clientHeight;
+  const bottomButtonHeight = clientHeight - 150;
+  
   const setAdminLoginId = useSetAdminLoginId();
 
   function joinAdminUser() {
@@ -88,7 +92,7 @@ function Admin_Main(props) {
   const MAIN_BACKGROUND = styled.div`
   background-Color: black;
   height: 100vh;
-  position: relative;
+  display: flex;
   `
 
   const FORM = styled.div`
@@ -104,35 +108,35 @@ function Admin_Main(props) {
   `
 
   const INPUT = styled.input`
+    position: absolute;
     height: 50px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    width: 80%;
+    width: 85%;
     background-Color: white;
     border: 0px;
-    margin-top: 330px;
+    margin-top: 300px;
     padding: 0px;
     padding-left: 10px;
     font-size: 20px;
-    position: absolute;
     left: 50%;
     transform:translateX(-50%);
   `
 
   const INPUT2 = styled.input`
+  position: absolute;
   height: 50px;
   @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
   font-family: 'Nanum Gothic', sans-serif;
-  width: 80%;
+  width: 85%;
   background-Color: white;
   border: 0px;
-  margin-top: 400px;
+  margin-top: 370px;
+  left: 50%;
+  transform:translateX(-50%);
   padding: 0px;
   padding-left: 10px;
   font-size: 20px;
-  position: absolute;
-  left: 50%;
-  transform:translateX(-50%);
   `
 
 
@@ -143,10 +147,8 @@ function Admin_Main(props) {
 
   const BUTTON = styled.button`
     position:absolute; 
-    bottom: 10px;
-    left: 50%;
-    transform:translateX(-50%);
-    width: calc(80% + 10px);
+    top: ${(props) => props.bottomButtonHeight}px;
+    width: calc(85% + 10px);
     height: 70px;
     background-Color: #CC2126;
     border: 0;
@@ -155,6 +157,8 @@ function Admin_Main(props) {
     font-size: 25px;
     color: white;
     border: 0px;
+    left: 50%;
+    transform:translateX(-50%);
   `
 
   useEffect(() => {
@@ -171,7 +175,7 @@ function Admin_Main(props) {
     <LOGO src="Admin/Login_Logo.png"></LOGO>
     <INPUT type="text" placeholder="ID" id="_id"></INPUT>
     <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
-    <BUTTON onClick={joinAdminUser}>Login</BUTTON>
+    <BUTTON bottomButtonHeight={bottomButtonHeight} onClick={joinAdminUser}>Login</BUTTON>
     </MAIN_BACKGROUND>
   );
 }
