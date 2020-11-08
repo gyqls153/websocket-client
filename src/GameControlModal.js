@@ -9,7 +9,7 @@ const ARROW_UP_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) translateY(-180%) rotate(270deg);
   left:50%;
-  top:400px;
+  top:310px;
   border : 0;
   width: 100px;
   &:active {
@@ -22,7 +22,7 @@ const ARROW_LEFT_BTN = styled.img`
   position: absolute;
   transform:translateX(-170%) translateY(-60%) rotate(180deg);
   left:50%;
-  top:400px;
+  top:310px;
   border : 0;
   width: 100px;
   &:active {
@@ -36,7 +36,7 @@ const ARROW_RIGHT_BTN = styled.img`
   position: absolute;
   transform:translateX(70%) translateY(-60%) rotate(0deg);
   left:50%;
-  top:400px;
+  top:310px;
   border : 0;
   width: 100px;
   &:active {
@@ -50,7 +50,7 @@ const ARROW_DOWN_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) translateY(60%) rotate(90deg);
   left:50%;
-  top:400px;
+  top:310px;
   border : 0px;
   width: 100px;
   &:active {
@@ -63,7 +63,7 @@ const ARROW_CENTOR_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) translateY(-60%) rotate(90deg);
   left:50%;
-  top: 400px;
+  top: 310px;
   border : 0;
   width: 100px;
   &:active {
@@ -101,7 +101,7 @@ const BACK_BUTTON = styled.img`
 
 const HOME_BUTTON = styled.button`
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     width: 40%;
     margin-left: 51%;
     padding: 10px 0;
@@ -117,7 +117,7 @@ const HOME_BUTTON = styled.button`
 
 const BACKBUTTON = styled.button`
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     width: 40%;
     padding: 10px 0;
     margin-left: 9%;
