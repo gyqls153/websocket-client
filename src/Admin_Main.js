@@ -93,7 +93,7 @@ function Admin_Main(props) {
 
   const FORM = styled.div`
   height: 500px;
-  position: absolute; 
+  position: relative; 
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
@@ -137,7 +137,9 @@ function Admin_Main(props) {
 
   const BUTTON = styled.button`
     position:absolute; 
-    bottom:20px;
+    bottom: 10px;
+    left: 50%;
+    transform:translateX(-50%);
     width: 85%;
     height: 70px;
     background-Color: #CC2126;
@@ -164,8 +166,8 @@ function Admin_Main(props) {
     <FORM>
       <INPUT type="text" placeholder="ID" id="_id"></INPUT>
       <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
-      <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </FORM>
+    <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </MAIN_BACKGROUND>
   );
 }
