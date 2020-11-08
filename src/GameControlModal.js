@@ -51,7 +51,7 @@ const ARROW_DOWN_BTN = styled.img`
   transform:translateX(-50%) translateY(60%) rotate(90deg);
   left:50%;
   top:50%;
-  border : 0;
+  border : 0px;
   width: 100px;
   &:active {
     content:url("Remote/ArrowRight.PNG");
