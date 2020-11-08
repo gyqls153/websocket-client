@@ -13,7 +13,7 @@ const ARROW_UP_BTN = styled.img`
   border : 0;
   width: 100px;
   &:active {
-    content:url("Remote/ArrowRight.PNG");
+    content:url("Remote/ArrowRight.png");
     width: 55px;
   }
 `
