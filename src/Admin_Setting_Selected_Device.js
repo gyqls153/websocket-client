@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
-import { useSelectedSerial, useSelectedSerialName } from './AppContextProvider';
 
 function Admin_Setting_Selected_Device(props)
 {
@@ -79,8 +78,8 @@ function Admin_Setting_Selected_Device(props)
         props.history.push("game_controll_modal");
     }
 
-    const selectedSerial = useSelectedSerial();
-    const selectedSerialName = useSelectedSerialName();
+    const selectedSerial = window.sessionStorage.getItem("selectedSerial");;
+    const selectedSerialName = window.sessionStorage.getItem("selectedSerialName");;
 
     return (
         <>

@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useAdminLoginId, useEnableGameDic, useSelectedSerial, useSetSelectedSerial } from './AppContextProvider';
 import ws from './WebSocket';
 import CastConnectedIcon from '@material-ui/icons/CastConnected';
 import Button from '@material-ui/core/Button';
@@ -16,7 +15,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
 function Admin_Setting_2({history}) {
-  const loginId = useAdminLoginId();
+  const loginId = "";
 
   const [gameList, setGameList] = useState([]);
 
@@ -26,9 +25,8 @@ function Admin_Setting_2({history}) {
 
   const [openGameList, setOpenGameList] = useState({});
 
-  const currentSerial = useSelectedSerial();
-  const set_currentSerial = useSetSelectedSerial();
-
+  const currentSerial = window.sessionStorage.getItem("selectedSerial");
+  
   useEffect(() => {
     async function func2() {
       await Axios.post('/serial_list', {
@@ -62,8 +60,7 @@ function Admin_Setting_2({history}) {
   };
 
   const onClickedControlButton = (idx) => {
-    set_currentSerial(serialList[idx]);
-
+    window.sessionStorage.setItem("selectedSerial", serialList[idx])
     history.push('/game_controll_modal')
     // onClickedInsertButton(idx);
     // handleOpen();
@@ -76,7 +73,7 @@ function Admin_Setting_2({history}) {
     })
       .then((response) => {
         console.log(response.data);
-        set_currentSerial(serialList[idx]);
+        window.sessionStorage.setItem("selectedSerial", serialList[idx])
         setShowGameList(true);
 
         let newBuyGameList = {};

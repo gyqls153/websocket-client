@@ -8,7 +8,6 @@ import AppContextProvider, {
   useSetSelectedLoginId,
   useSetSerialInfoList,
   useSetEnableGameDic,
-  useSetAdminLoginId,
 } from './AppContextProvider';
 // import Avatar from '@material-ui/core/Avatar';
 import Avatar from '../node_modules/@material-ui/core/Avatar'
@@ -31,8 +30,6 @@ function Admin_Main(props) {
   const clientHeight = document.documentElement.clientHeight;
   const bottomButtonHeight = clientHeight - 150;
   
-  const setAdminLoginId = useSetAdminLoginId();
-
   function joinAdminUser() {
     const id = document.getElementById('_id').value;
     const password = document.getElementById('_Password').value;
@@ -44,7 +41,7 @@ function Admin_Main(props) {
       })
       .then(function (response) {
         if (response.data.isSuccess) {
-          setAdminLoginId(id);
+          window.sessionStorage.setItem("loginId", id);
           // 로그인
           props.history.push('/admin_setting_new');
         } else {

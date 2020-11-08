@@ -11,7 +11,6 @@ import AppContextProvider, {
   useSetSelectedLoginId,
   useSetSerialInfoList,
   useSetEnableGameDic,
-  useSetAdminLoginId,
   useSetCurrentCustomer,
 } from './AppContextProvider';
 

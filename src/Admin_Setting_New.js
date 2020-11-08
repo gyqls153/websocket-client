@@ -30,7 +30,7 @@ function Admin_Setting_New(props)
     font-weight: bold;
     `
     
-    const loginId = useAdminLoginId();
+    const loginId = window.sessionStorage.getItem("loginId");
 
     const [serials, setSerialList] = useState([]);
 
@@ -55,12 +55,10 @@ function Admin_Setting_New(props)
         } 
       }, []);
 
-      const set_selectedSerial = useSetSelectedSerial();
-      const set_selectedSerialName = useSetSelectedSerialName();
-      
   async function Clicked_Serial(serial, dataName) {
-    set_selectedSerial(serial);
-    set_selectedSerialName(dataName);
+    window.sessionStorage.setItem("selectedSerial", serial);
+    window.sessionStorage.setItem("selectedSerialName", dataName);
+
     await Axios.post('/callback').then(function (response) {
         props.history.push("admin_setting_selected_device");
     })

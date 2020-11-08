@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { useSelectedSerial, useSerialInfoList } from './AppContextProvider';
+import { useSerialInfoList } from './AppContextProvider';
 import Admin_Game_Box from './Admin_Game_Box';
 
 function Admin_Setting_Game_Selection(props)
@@ -181,7 +181,7 @@ function Admin_Setting_Game_Selection(props)
         return result;
     };
 
-    const currentSerial = useSelectedSerial();
+    const currentSerial =  window.sessionStorage.getItem("selectedSerial");
 
     const SetEnable = (isEnable, gameId) => {
         console.log(isEnable);

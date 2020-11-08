@@ -7,16 +7,12 @@ const AppContextProvider = ({children}) => {
         loginId: ""
     })
 
-    const [admin_loginId, set_admin_loginId] = useState("");
-
     const set_selectedLoginId = (param) => {
         setValue(param);
     }
 
     const [enableGameDic, set_enableGameDic] = useState({});
     const [serialInfoList, setSerialInfoList] = useState([]);
-    const [currentSerial, set_currentSerial] = useState(0);
-    const [currentSerialName, set_currentSerialName] = useState(0);
     
     const [currentCustomer, set_currentCustomer] = useState("");
     
@@ -29,20 +25,11 @@ const AppContextProvider = ({children}) => {
             enableGameDic,
             set_enableGameDic,
 
-            admin_loginId,
-            set_admin_loginId,
-            
             serialInfoList,
             setSerialInfoList,
             
-            currentSerial,
-            set_currentSerial,
-
             currentCustomer,
-            set_currentCustomer,
-
-            currentSerialName,
-            set_currentSerialName
+            set_currentCustomer
         }
     }>{children}</AppContext.Provider>
 };
@@ -74,16 +61,6 @@ export const useSetCurrentCustomer = () => {
     return set_currentCustomer;
 }
 
-export const useSetAdminLoginId = () => {
-    const {set_admin_loginId} = useContext(AppContext);
-    return set_admin_loginId;
-}
-
-export const useAdminLoginId = () => {
-    const {admin_loginId} = useContext(AppContext);
-    return admin_loginId;
-}
-
 export const useEnableGameDic = () => {
     const {enableGameDic} = useContext(AppContext);
     return enableGameDic;
@@ -103,24 +80,3 @@ export const useSetSerialInfoList = () => {
     const {setSerialInfoList} = useContext(AppContext);
     return setSerialInfoList;
 }
-
-export const useSelectedSerial = () => {
-    const {currentSerial} = useContext(AppContext);
-    return currentSerial;
-}
-
-export const useSetSelectedSerial = () => {
-    const {set_currentSerial} = useContext(AppContext);
-    return set_currentSerial;
-}
-
-export const useSelectedSerialName = () => {
-    const {currentSerialName} = useContext(AppContext);
-    return currentSerialName;
-}
-
-export const useSetSelectedSerialName = () => {
-    const {set_currentSerialName} = useContext(AppContext);
-    return set_currentSerialName;
-}
-

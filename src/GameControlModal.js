@@ -1,7 +1,6 @@
 import { Fade, makeStyles, Modal } from "@material-ui/core";
 import Backdrop from '@material-ui/core/Backdrop';
 import React, { useEffect, useState } from "react";
-import { useSelectedSerial } from "./AppContextProvider";
 import ws from './WebSocket';
 import styled from 'styled-components'
 
@@ -169,7 +168,7 @@ function GameControlModal(props)
       }
   };
 
-    const curentSerial = useSelectedSerial();
+    const curentSerial = window.sessionStorage.getItem("selectedSerial");
 
     const useStyles = makeStyles((theme) => ({
         paper: {
