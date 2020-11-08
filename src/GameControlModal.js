@@ -9,7 +9,7 @@ const ARROW_UP_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) translateY(-180%) rotate(270deg);
   left:50%;
-  top:50%;
+  top:400px;
   border : 0;
   width: 100px;
   &:active {
@@ -22,7 +22,7 @@ const ARROW_LEFT_BTN = styled.img`
   position: absolute;
   transform:translateX(-170%) translateY(-60%) rotate(180deg);
   left:50%;
-  top:50%;
+  top:400px;
   border : 0;
   width: 100px;
   &:active {
@@ -36,7 +36,7 @@ const ARROW_RIGHT_BTN = styled.img`
   position: absolute;
   transform:translateX(70%) translateY(-60%) rotate(0deg);
   left:50%;
-  top:50%;
+  top:400px;
   border : 0;
   width: 100px;
   &:active {
@@ -50,7 +50,7 @@ const ARROW_DOWN_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) translateY(60%) rotate(90deg);
   left:50%;
-  top:50%;
+  top:400px;
   border : 0px;
   width: 100px;
   &:active {
@@ -63,7 +63,7 @@ const ARROW_CENTOR_BTN = styled.img`
   position: absolute;
   transform:translateX(-50%) translateY(-60%) rotate(90deg);
   left:50%;
-  top: 50%;
+  top: 400px;
   border : 0;
   width: 100px;
   &:active {
@@ -242,7 +242,7 @@ function GameControlModal(props)
           <NANUM_GOTHIC>Joystick</NANUM_GOTHIC>
         </HEADER>
         {open ? <JOYSTICK_ON src= "Remote/Btn_On.PNG" onClick={() => setOpen(false)}></JOYSTICK_ON> : <JOYSTICK_OFF src= "Remote/Btn_Off.PNG" onClick={() => setOpen(true)}></JOYSTICK_OFF>}
-        <ARROW_UP_BTN onPress={() => console.log("press")} onClick={() => onClickedRemoteCommand('UP')} src="Remote/Btn_Arrow.PNG"/>
+        <ARROW_UP_BTN onClick={() => onClickedRemoteCommand('UP')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_DOWN_BTN onClick={() => onClickedRemoteCommand('DOWN')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_LEFT_BTN onClick={() => onClickedRemoteCommand('LEFTS')} src="Remote/Btn_Arrow.PNG"/>
         <ARROW_RIGHT_BTN onClick={() => onClickedRemoteCommand('RIGHT')} src="Remote/Btn_Arrow.PNG"/>
