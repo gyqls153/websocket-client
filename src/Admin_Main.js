@@ -97,34 +97,36 @@ function Admin_Main(props) {
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60vw;
+  width: 90vw;
   display: flex;
   align-items: center;
   flex-direction: column;
   `
 
   const INPUT = styled.input`
-    height: 30px;
+    height: 50px;
     margin-left: 10px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    width: 90%;
+    width: 85%;
     background-Color: white;
     border: 0px;
     margin-top: 100px;
     padding-left: 10px;
+    font-size: 20px;
   `
 
   const INPUT2 = styled.input`
-  height: 30px;
+  height: 50px;
   margin-left: 10px;
   @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
   font-family: 'Nanum Gothic', sans-serif;
-  width: 90%;
+  width: 85%;
   background-Color: white;
   border: 0px;
-  margin-top: 10px;
+  margin-top: 30px;
   padding-left: 10px;
+  font-size: 20px;
   `
 
 
@@ -135,16 +137,16 @@ function Admin_Main(props) {
 
   const BUTTON = styled.button`
     position:absolute; 
-    bottom:100px;
-    width: 100%;
-    height: 50px;
+    bottom:20px;
+    width: 85%;
+    height: 70px;
     background-Color: #CC2126;
     border: 0;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
-    font-weight: bold;
+    border: 0px;
   `
 
   useEffect(() => {
