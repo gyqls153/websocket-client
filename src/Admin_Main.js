@@ -110,7 +110,7 @@ function Admin_Main(props) {
     width: 80%;
     background-Color: white;
     border: 0px;
-    margin-top: 230px;
+    margin-top: 330px;
     padding: 0px;
     padding-left: 10px;
     font-size: 20px;
@@ -126,7 +126,7 @@ function Admin_Main(props) {
   width: 80%;
   background-Color: white;
   border: 0px;
-  margin-top: 300px;
+  margin-top: 400px;
   padding: 0px;
   padding-left: 10px;
   font-size: 20px;
