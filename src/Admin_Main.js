@@ -88,7 +88,7 @@ function Admin_Main(props) {
   const MAIN_BACKGROUND = styled.div`
   background-Color: black;
   height: 100vh;
-  display: flex;
+  position: relative;
   `
 
   const FORM = styled.div`
@@ -105,28 +105,34 @@ function Admin_Main(props) {
 
   const INPUT = styled.input`
     height: 50px;
-    margin-left: 10px;
     @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     font-family: 'Nanum Gothic', sans-serif;
-    width: 85%;
+    width: 80%;
     background-Color: white;
     border: 0px;
-    margin-top: 100px;
+    margin-top: 230px;
+    padding: 0px;
     padding-left: 10px;
     font-size: 20px;
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
   `
 
   const INPUT2 = styled.input`
   height: 50px;
-  margin-left: 10px;
   @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
   font-family: 'Nanum Gothic', sans-serif;
-  width: 85%;
+  width: 80%;
   background-Color: white;
   border: 0px;
-  margin-top: 30px;
+  margin-top: 300px;
+  padding: 0px;
   padding-left: 10px;
   font-size: 20px;
+  position: absolute;
+  left: 50%;
+  transform:translateX(-50%);
   `
 
 
@@ -140,7 +146,7 @@ function Admin_Main(props) {
     bottom: 10px;
     left: 50%;
     transform:translateX(-50%);
-    width: 85%;
+    width: calc(80% + 10px);
     height: 70px;
     background-Color: #CC2126;
     border: 0;
@@ -163,10 +169,8 @@ function Admin_Main(props) {
 
     <MAIN_BACKGROUND>
     <LOGO src="Admin/Login_Logo.png"></LOGO>
-    <FORM>
-      <INPUT type="text" placeholder="ID" id="_id"></INPUT>
-      <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
-    </FORM>
+    <INPUT type="text" placeholder="ID" id="_id"></INPUT>
+    <INPUT2 type="password" placeholder="Password" id="_Password"></INPUT2>
     <BUTTON onClick={joinAdminUser}>Login</BUTTON>
     </MAIN_BACKGROUND>
   );
